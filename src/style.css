@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+.scrolling-background-1 {
+  animation: slide 70s infinite; /* Adjust duration to control speed */
+	animation-timing-function: linear;
+	animation-direction: normal;
+}
+
+.scrolling-background-2 {
+  animation: slide 40s infinite; /* Adjust duration to control speed */
+	animation-timing-function: linear;
+	animation-direction: normal;
+}
+
+.scrolling-background-3 {
+  animation: slide 17s infinite; /* Adjust duration to control speed */
+	animation-timing-function: linear;
+	animation-direction: normal;
+}
+
+.scrolling-background-4 {
+  animation: slide 10s infinite; /* Adjust duration to control speed */
+	animation-timing-function: linear;
+	animation-direction: normal;
+}
+
+.scrolling-background-1, .scrolling-background-2 {
+  will-change: background-position;
+}
+
+/* Define the animation */
+@keyframes slide {
+  0% { background-position-x: 0; }
+  100% { background-position-x: -1500px; }
+}
+
