@@ -1,8 +1,27 @@
+import { Parallax } from "react-scroll-parallax"
+import Lenis from '@studio-freight/lenis'
+import { useEffect } from 'react'
+
  const Home = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard "smooth" easing
+    })
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+    return () => lenis.destroy()
+  }, [])
+
   return (
-    <>
+    <div className=" m-auto">
       <div className="h-screen">
-        <div className="w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
+        <div className="relative w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
           <div className="absolute inset-0 bg-[url(/BG_1.png)] bg-size-[1500px_auto] bg-bottom bg-repeat-x scrolling-background-1"></div>
           <div className="absolute inset-0 bg-[url(/BG_2.png)] bg-size-[1500px_auto] bg-bottom bg-no-repeat"></div>
           <div className="absolute inset-0 bg-[url(/BG_3.png)] bg-size-[1500px_auto] bg-bottom bg-repeat-x"></div>
@@ -12,10 +31,30 @@
         </div>
       </div>
 
-      <div className="h-screen bg-yellow-300">
-        Home aaaa
+      
+
+      <div className="relative h-screen bg-[#484868]">
+        
       </div>
-    </>
+
+      <div className="relative  h-screen bg-[#2b60c9]">
+        <Parallax speed={-10} className="absolute inset-0">
+          <div className="w-full h-screen bg-[url(/BG_7.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
+        </Parallax>
+
+        <Parallax speed={5} className="absolute inset-0">
+          <div className="w-full h-screen bg-[url(/BG_8_1.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
+        </Parallax>
+      </div>
+
+      <div className="relative  h-screen bg-[#2b60c9]">
+        <div className="absolute inset-0 bg-[url(/BG_8.png)] bg-size-[1500px_auto] bg-repeat bg-top"></div>
+      </div>
+
+      <div className="relative h-screen bg-[#484868]">
+        
+      </div>
+    </div>
   )
 }
 

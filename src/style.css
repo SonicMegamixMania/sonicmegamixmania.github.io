@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .scrolling-background-1 {
   animation: slide 70s infinite; /* Adjust duration to control speed */
 	animation-timing-function: linear;
