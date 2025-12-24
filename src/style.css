@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+html.lenis, html.lenis body {
+  height: auto;
 }
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* This is the crucial part for flickering */
+.lenis.lenis-scrolling {
+  user-select: none;
+  pointer-events: none;
+}
+
 
 .scrolling-background-1 {
   animation: slide 70s infinite; /* Adjust duration to control speed */

@@ -6,7 +6,12 @@ import { useEffect } from 'react'
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard "smooth" easing
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      syncTouch: true,
+      smoothWheel: true,
+      infinite: false,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     })
 
     function raf(time: number) {
@@ -31,19 +36,19 @@ import { useEffect } from 'react'
         </div>
       </div>
 
-      
 
-      <div className="relative h-screen bg-[#484868]">
-        
+      <div className="relative h-screen bg-[#2b60c9]">
+        {/* Scrolling bar */}
+        <div className="-translate-y-[23px] w-full h-12 bg-[url(/BARS.png)] bg-size-[1500px_auto] bg-repeat-x scrolling-background-2"> </div>
       </div>
 
       <div className="relative  h-screen bg-[#2b60c9]">
         <Parallax speed={-10} className="absolute inset-0">
-          <div className="w-full h-screen bg-[url(/BG_7.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
+          <div className="-translate-y-[-50px] w-full h-screen bg-[url(/BG_7.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
         </Parallax>
 
         <Parallax speed={5} className="absolute inset-0">
-          <div className="w-full h-screen bg-[url(/BG_8_1.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
+          <div className="-translate-y-[-50px] w-full h-screen bg-[url(/BG_8_1.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
         </Parallax>
       </div>
 
@@ -52,7 +57,8 @@ import { useEffect } from 'react'
       </div>
 
       <div className="relative h-screen bg-[#484868]">
-        
+        {/* Scrolling bar */}
+        <div className="-translate-y-[23px] w-full h-12 bg-[url(/BARS.png)] bg-size-[1500px_auto] bg-repeat-x scrolling-background-2"> </div>
       </div>
     </div>
   )
