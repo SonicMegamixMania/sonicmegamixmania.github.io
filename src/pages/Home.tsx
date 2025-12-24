@@ -25,6 +25,7 @@ import { useEffect } from 'react'
 
   return (
     <div className=" m-auto">
+      {/* Hill and water backgrounds */}
       <div className="h-screen">
         <div className="relative w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
           <div className="absolute inset-0 bg-[url(/BG_1.png)] bg-size-[1500px_auto] bg-bottom bg-repeat-x scrolling-background-1"></div>
@@ -36,12 +37,13 @@ import { useEffect } from 'react'
         </div>
       </div>
 
-
+      {/* Blue info section */}
       <div className="relative h-screen bg-[#2b60c9]">
         {/* Scrolling bar */}
         <div className="-translate-y-[23px] w-full h-12 bg-[url(/BARS.png)] bg-size-[1500px_auto] bg-repeat-x scrolling-background-2"> </div>
       </div>
 
+      {/* Rocky section parallax */}
       <div className="relative  h-screen bg-[#2b60c9]">
         <Parallax speed={-10} className="absolute inset-0">
           <div className="-translate-y-[-50px] w-full h-screen bg-[url(/BG_7.png)] bg-[length:1500px_auto] bg-bottom bg-repeat-x bg-scroll" />
@@ -52,10 +54,12 @@ import { useEffect } from 'react'
         </Parallax>
       </div>
 
+      {/* Rocky info parallax */}
       <div className="relative  h-screen bg-[#2b60c9]">
         <div className="absolute inset-0 bg-[url(/BG_8.png)] bg-size-[1500px_auto] bg-repeat bg-top"></div>
       </div>
 
+      {/* Grey section parallax */}
       <div className="relative h-screen bg-[#484868]">
         {/* Scrolling bar */}
         <div className="-translate-y-[23px] w-full h-12 bg-[url(/BARS.png)] bg-size-[1500px_auto] bg-repeat-x scrolling-background-2"> </div>
