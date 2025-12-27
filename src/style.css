@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* LENIS (smooth scrolling) CONFIGURATION */
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -12,42 +13,39 @@ html.lenis, html.lenis body {
   overscroll-behavior: contain;
 }
 
-/* This is the crucial part for flickering */
 .lenis.lenis-scrolling {
   user-select: none;
   pointer-events: none;
 }
 
+/* BACKGROUND LAYER CONFIGURATION */
+.backgroundLayer {
+  @apply absolute inset-0 bg-size-[1500px_auto] bg-bottom bg-repeat-x;
+}
 
+/* Keyframes and Animation */
 .scrolling-background-1 {
-  animation: slide 70s infinite; /* Adjust duration to control speed */
-	animation-timing-function: linear;
-	animation-direction: normal;
+  animation: slide 70s infinite;
 }
 
 .scrolling-background-2 {
-  animation: slide 40s infinite; /* Adjust duration to control speed */
-	animation-timing-function: linear;
-	animation-direction: normal;
+  animation: slide 40s infinite; 
 }
 
 .scrolling-background-3 {
-  animation: slide 17s infinite; /* Adjust duration to control speed */
-	animation-timing-function: linear;
-	animation-direction: normal;
+  animation: slide 17s infinite;
 }
 
 .scrolling-background-4 {
-  animation: slide 10s infinite; /* Adjust duration to control speed */
-	animation-timing-function: linear;
+  animation: slide 10s infinite;
+}
+
+.scrolling-background-1, .scrolling-background-2, .scrolling-background-3, .scrolling-background-4 {
+  will-change: background-position;
+  animation-timing-function: linear;
 	animation-direction: normal;
 }
 
-.scrolling-background-1, .scrolling-background-2 {
-  will-change: background-position;
-}
-
-/* Define the animation */
 @keyframes slide {
   0% { background-position-x: 0; }
   100% { background-position-x: -1500px; }
