@@ -1,28 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
 @import "tailwindcss";
 
 @theme {
   --font-bbh: "BBH Bartle", sans-serif; 
-}
-
-/* LENIS (smooth scrolling) CONFIGURATION */
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-scrolling {
-  user-select: none;
-  pointer-events: none;
+  --font-outfit: "Outfit", sans-serif;
 }
 
 /* BACKGROUND LAYER CONFIGURATION */
