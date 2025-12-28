@@ -38,7 +38,7 @@ import screenshot5 from "../assets/screenshot_5.jpg"
 
   const screenshotWithText = (capitalizedFirstPhrase: string = "", text: string = "", screenshot: string = "") => {
     return (
-      <div className="relative z-50 pt-50 pl-5 pr-5 m-auto max-w-[1750px] 
+      <div className="relative z-50 pt-30 pl-5 pr-5 m-auto max-w-[1750px] 
                       flex flex-row items-center">
         <div className="mr-auto ml-auto pl-5 w-full max-w-[875px]">
             <p className="text-justify">
@@ -69,11 +69,12 @@ import screenshot5 from "../assets/screenshot_5.jpg"
         <div className="backgroundLayer bg-[url(/BG_4.png)] scrolling-background-2"/>
         <div className="backgroundLayer bg-[url(/BG_5.png)] scrolling-background-3"/>
         <div className="backgroundLayer bg-[url(/BG_6.png)] scrolling-background-4"/>
-
         
         <div className="relative w-full h-full flex flex-col flex-wrap justify-center content-center items-start">
           {/* Logo */}
-          <img className="w-[550px] 2xl:w-[880px] animate__animated animate__fadeInDown" src={sonicMegamixLogo} />
+          <img className="w-[550px] 2xl:w-[880px] animate__animated animate__fadeInDown" 
+            src={sonicMegamixLogo} 
+          />
 
           {/* Download button */}
           {buttonGradient("Download")}
@@ -85,9 +86,12 @@ import screenshot5 from "../assets/screenshot_5.jpg"
         { scrollingBar() }
         
         {/* YouTube Video and Text Two Columns*/}
-        <div className="relative z-50 pt-50 pl-5 pr-5 m-auto max-w-[1750px] 
+        <div className="relative z-50 pt-60 pl-5 pr-5 m-auto max-w-[1750px] 
                         flex flex-row items-center">
-          <div className="w-full">
+          <div className="w-full
+                          transition-all duration-300 hover:cursor-pointer 
+                          drop-shadow-[-10px_10px_0px_rgba(1,1,1,0.7)]
+                          hover:drop-shadow-[-10px_10px_0px_rgba(1,1,1,1)]">
             <LiteYouTubeEmbed
               id="vY0y033-Gic"
               title="Rick Astley - Never Gonna Give You Up"
@@ -102,6 +106,7 @@ import screenshot5 from "../assets/screenshot_5.jpg"
         </div>
 
         {/* Story Text with Screenshots Two Columns*/}
+        <div className="pt-30"/>
         {screenshotWithText(
           "5 months have passed ", "since Sonic the Hedgehog's previous plight against the nefarious Dr. Eggman. Ever since their first conflict the two sides have been battling constantly, with victory being just out of Eggman's grasp. However, after years of fighting Eggman had vanished after the incident on Space Colony Ark, leaving the world safely in Sonic’s hands - or so it was thought.",
           screenshot1
