@@ -1,8 +1,10 @@
-import { Parallax } from "react-scroll-parallax"
 import 'animate.css';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Parallax } from "react-scroll-parallax"
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import { useEffect } from 'react';
 
 import sonicMegamixLogo from "../assets/logo.png"
 import screenshot1 from "../assets/screenshot_1.jpg"
@@ -13,7 +15,10 @@ import screenshot5 from "../assets/screenshot_5.jpg"
  const Home = () => {
   const scrollingBar = () => {
     return (
-      <div className="backgroundLayer bg-[url(/BARS.png)] scrolling-background-2 h-12 -translate-y-[23px]"/>
+      <div className="backgroundLayer repeatBGLayer
+                      bg-[url(/BARS.png)] scrolling-background-2 
+                      h-12 -translate-y-[23px]"
+      />
     )
   }
 
@@ -38,7 +43,7 @@ import screenshot5 from "../assets/screenshot_5.jpg"
 
   const screenshotWithText = (capitalizedFirstPhrase: string = "", text: string = "", screenshot: string = "") => {
     return (
-      <div className="relative z-50 pt-30 pl-5 pr-5 m-auto max-w-[1750px] 
+      <div className="relative z-50 pt-30 pl-10 pr-10 m-auto max-w-[1750px] 
                       flex flex-row items-center">
         <div className="mr-auto ml-auto pl-5 w-full max-w-[875px]">
             <p className="text-justify">
@@ -46,12 +51,12 @@ import screenshot5 from "../assets/screenshot_5.jpg"
             </p>
         </div>
 
-        <div className="w-full">
+        <div className="w-full" data-aos="fade-up">
           <img className="w-full pl-20
                           transition-all duration-300 hover:cursor-pointer  
                           drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
                           hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
-                          hover:scale-105" 
+                          scale-100 hover:scale-105"
             src={screenshot} 
           />
         </div>
@@ -59,16 +64,20 @@ import screenshot5 from "../assets/screenshot_5.jpg"
     )
   }
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <div className="m-auto text-white font-outfit text-2xl 2xl:text-3xl">
       <div className="relative w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
         {/* Hill and water backgrounds */}
-        <div className="backgroundLayer bg-[url(/BG_1.png)] scrolling-background-1"/>
+        <div className="backgroundLayer repeatBGLayer bg-[url(/BG_1.png)] scrolling-background-1"/>
         <div className="backgroundLayer bg-[url(/BG_2.png)]"/>
-        <div className="backgroundLayer bg-[url(/BG_3.png)]"/>
-        <div className="backgroundLayer bg-[url(/BG_4.png)] scrolling-background-2"/>
-        <div className="backgroundLayer bg-[url(/BG_5.png)] scrolling-background-3"/>
-        <div className="backgroundLayer bg-[url(/BG_6.png)] scrolling-background-4"/>
+        <div className="backgroundLayer repeatBGLayer bg-[url(/BG_3.png)]"/>
+        <div className="backgroundLayer repeatBGLayer bg-[url(/BG_4.png)] scrolling-background-2"/>
+        <div className="backgroundLayer repeatBGLayer bg-[url(/BG_5.png)] scrolling-background-3"/>
+        <div className="backgroundLayer repeatBGLayer bg-[url(/BG_6.png)] scrolling-background-4"/>
         
         <div className="relative w-full h-full flex flex-col flex-wrap justify-center content-center items-start">
           {/* Logo */}
@@ -86,15 +95,16 @@ import screenshot5 from "../assets/screenshot_5.jpg"
         { scrollingBar() }
         
         {/* YouTube Video and Text Two Columns*/}
-        <div className="relative z-50 pt-60 pl-5 pr-5 m-auto max-w-[1750px] 
+        <div className="relative z-50 pt-60 pl-10 pr-10 m-auto max-w-[1750px] 
                         flex flex-row items-center">
           <div className="w-full
                           transition-all duration-300 hover:cursor-pointer 
                           drop-shadow-[-10px_10px_0px_rgba(1,1,1,0.7)]
-                          hover:drop-shadow-[-10px_10px_0px_rgba(1,1,1,1)]">
+                          hover:drop-shadow-[-10px_10px_0px_rgba(1,1,1,1)]"
+                          data-aos="fade-right">
             <LiteYouTubeEmbed
               id="vY0y033-Gic"
-              title="Rick Astley - Never Gonna Give You Up"
+              title="Sonic Megamix Trailer"
             />
           </div>
 
@@ -128,11 +138,11 @@ import screenshot5 from "../assets/screenshot_5.jpg"
       {/* Rocky section vertical parallax */}
       <div className="relative  h-screen bg-[#2b60c9]">
         <Parallax speed={-10} className="absolute inset-0">
-          <div className="backgroundLayer bg-[url(/BG_7.png)] -translate-y-[-50px]"/>
+          <div className="backgroundLayer repeatBGLayer bg-[url(/BG_7.png)] -translate-y-[-50px]"/>
         </Parallax>
 
         <Parallax speed={5} className="absolute inset-0">
-          <div className="backgroundLayer bg-[url(/BG_8_1.png)] -translate-y-[-50px]"/>
+          <div className="backgroundLayer repeatBGLayer bg-[url(/BG_8_1.png)] -translate-y-[-50px]"/>
         </Parallax>
       </div>
 
@@ -144,7 +154,7 @@ import screenshot5 from "../assets/screenshot_5.jpg"
       {/* Grey section parallax */}
       <div className="relative h-screen bg-[#484868]">
         {/* Scrolling bar */}
-        <div className="backgroundLayer bg-[url(/BARS.png)] scrolling-background-2 h-12 -translate-y-[23px]"/>
+        { scrollingBar() }
       </div>
     </div>
   )

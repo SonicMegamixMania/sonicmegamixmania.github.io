@@ -10,7 +10,11 @@
 
 /* BACKGROUND LAYER CONFIGURATION */
 .backgroundLayer {
-  @apply absolute inset-0 bg-size-[1500px_auto] bg-bottom bg-repeat-x;
+  @apply absolute inset-0 bg-size-[1500px_auto] bg-bottom bg-no-repeat;
+}
+
+.repeatBGLayer {
+  @apply bg-repeat-x;
 }
 
 /* Keyframes and Animation */
