@@ -117,7 +117,7 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       classText = "text-[#f09000] [-webkit-text-stroke:1.5px_#b00000]"
       break;
     case "shadow":
-      classText = "text-[#000000] [-webkit-text-stroke:1.5px_#b00000]"
+      classText = "text-[#000000] [-webkit-text-stroke:1.5px_#ff1212]"
       break;
     default:
       break;
