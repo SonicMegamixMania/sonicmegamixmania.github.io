@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap');
 
 @import "tailwindcss";
 
 @theme {
   --font-bbh: "BBH Bartle", sans-serif; 
   --font-outfit: "Outfit", sans-serif;
+  --font-bbh-heg: "BBH Hegarty", sans-serif;
 }
 
 /* BACKGROUND LAYER CONFIGURATION */

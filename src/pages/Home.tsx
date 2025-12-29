@@ -62,18 +62,20 @@ const PageColumn = ({ children, firstColumn=false }: PageColumnProps) => {
 
 interface ScreenshotWithTextProps {
   capitalizedFirstPhrase?: string,
-  text: string,
+  text?: string,
   screenshot: string,
-  firstColumn?: boolean
+  firstColumn?: boolean,
+  children?: ReactNode
 }
 
 const ScreenshotWithText = ( 
-    {capitalizedFirstPhrase="", text, screenshot, firstColumn=false}: ScreenshotWithTextProps) => {
+    {capitalizedFirstPhrase="", text="", screenshot, firstColumn=false, children}: ScreenshotWithTextProps) => {
   return (
     <PageColumn firstColumn={firstColumn}>
       <div className="mr-auto ml-auto pl-5 w-full max-w-[875px]">
           <p className="text-justify">
             <span className="uppercase text-4xl">{capitalizedFirstPhrase}</span>{text}
+            {children}
           </p>
       </div>
  
@@ -87,6 +89,43 @@ const ScreenshotWithText = (
         />
       </div>
     </PageColumn>
+  )
+}
+
+interface TextCharDecorProps {
+  char?: string,
+  children?: ReactNode
+}
+
+const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
+  let classText = ""
+
+  switch (char) {
+    case "sonic":
+      classText = "text-[#0000cc] [-webkit-text-stroke:1.5px_#f8a838]"
+      break;
+    case "eggman":
+      classText = "text-[#b01010] [-webkit-text-stroke:1.5px_#FFFFFF]"
+      break;
+    case "chaotix":
+      classText = "text-[#782ce6] [-webkit-text-stroke:1.5px_#54f978]"
+      break;
+    case "mighty":
+      classText = "text-[#b01010] [-webkit-text-stroke:1.5px_#200040]"
+      break;
+    case "ray":
+      classText = "text-[#f09000] [-webkit-text-stroke:1.5px_#b00000]"
+      break;
+    case "shadow":
+      classText = "text-[#000000] [-webkit-text-stroke:1.5px_#b00000]"
+      break;
+    default:
+      break;
+  }
+  return (
+    <span className={`text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
+      {children}
+    </span>
   )
 }
 
@@ -136,7 +175,9 @@ const Home = () => {
 
           <div className="w-full pl-7">
               <p className="text-justify">
-                <span className="text-4xl uppercase">Sonic Megamix Mania</span> is a fan-made modification for Sonic Mania Plus that aims to carry the torch of the discontinued ROM hack known as “Sonic the Hedgehog Megamix”. Megamix Mode adapts concepts from the ROM hack combined with the team's own vision bringing a unique experience built upon the foundation of the original. Classic Mode is a faithful remake of the content from “V.4.0b” of the ROM hack that offers a familiar experience with a fresh coat of paint. Sonic Megamix Mania offers beginner friendly and challenging experiences for old and new fans alike.<br/><br/>We plan to offer future updates to the project so follow our socials and be sure to stay tuned!
+                <span className="text-4xl uppercase">Sonic Megamix Mania</span> is a fan-made modification for Sonic Mania Plus that aims to carry the torch of the discontinued ROM hack known as “Sonic the Hedgehog Megamix”. Megamix Mode adapts concepts from the ROM hack combined with the team's own vision bringing a unique experience built upon the foundation of the original. Classic Mode is a faithful remake of the content from “V.4.0b” of the ROM hack that offers a familiar experience with a fresh coat of paint. Sonic Megamix Mania offers beginner friendly and challenging experiences for old and new fans alike.
+                <br/><br/>
+                We plan to offer future updates to the project so follow our socials and be sure to stay tuned!
               </p>
           </div>
         </PageColumn>
@@ -145,23 +186,25 @@ const Home = () => {
         <ScreenshotWithText
           firstColumn={true}
           capitalizedFirstPhrase="5 months have passed " 
-          text="since Sonic the Hedgehog's previous plight against the nefarious Dr. Eggman. Ever since their first conflict the two sides have been battling constantly, with victory being just out of Eggman's grasp. However, after years of fighting Eggman had vanished after the incident on Space Colony Ark, leaving the world safely in Sonic’s hands - or so it was thought."
           screenshot={screenshot1}
-        />
+        >
+          since <TextCharDecor char="sonic">Sonic the Hedgehog's</TextCharDecor> previous plight against the nefarious <TextCharDecor char="eggman">Dr. Eggman.</TextCharDecor> Ever since their first conflict the two sides have been battling constantly, with victory being just out of Eggman's grasp. However, after years of fighting Eggman had vanished after the incident on Space Colony Ark, leaving the world safely in Sonic’s hands - or so it was thought.
+        </ScreenshotWithText>
         <ScreenshotWithText 
-          text="During this time of peace, the Chaotix discover a paper trail of blueprints to be built on an Island known as the Chiral Peninsula. These plans have Eggman’s name written all over them, requiring the power source of the Chaos Rings or Master Emerald. In his solidarity, Eggman was able to make a ton of breakthroughs using his research from Newtrogic Island. Now he is able to create robots that use positive ring energy as their power source, helping him stay under the radar of Sonic and G.U.N."
           screenshot={screenshot2} 
-        />
+        >
+          During this time of peace, the <TextCharDecor char='chaotix'>Chaotix</TextCharDecor> discover a paper trail of blueprints to be built on an Island known as the Chiral Peninsula. These plans have Eggman’s name written all over them, requiring the power source of the Chaos Rings or Master Emerald. In his solidarity, Eggman was able to make a ton of breakthroughs using his research from Newtrogic Island. Now he is able to create robots that use positive ring energy as their power source, helping him stay under the radar of Sonic and G.U.N.
+        </ScreenshotWithText>
         <ScreenshotWithText 
-          capitalizedFirstPhrase="5 months have passed " 
-          text="With this information in hand, Mighty calls upon his good friend Ray to warn Sonic the Hedgehog and Knuckles the Echidna about their lead on Eggman. In this rare time of freedom, the flickies are able to repay their debt to Sonic after the events on Flicky Island. They prevent Eggman from using the Chaos rings, breaking them down into a plethora of blue, red, and yellow rings scattered throughout dimensions."
           screenshot={screenshot3} 
-        />
+        >
+          With this information in hand, <TextCharDecor char='mighty'>Mighty the Armadillo</TextCharDecor> calls upon his good friend <TextCharDecor char='ray'>Ray the Flying Squirrel</TextCharDecor> to warn Sonic the Hedgehog and Knuckles the Echidna about their lead on Eggman. In this rare time of freedom, the flickies are able to repay their debt to Sonic after the events on Flicky Island. They prevent Eggman from using the Chaos rings, breaking them down into a plethora of blue, red, and yellow rings scattered throughout dimensions.
+        </ScreenshotWithText>
         <ScreenshotWithText 
-          capitalizedFirstPhrase="5 months have passed " 
-          text="Without hesitation Sonic and friends travel to the Chiral Peninsula. As Ray drops them off one by one, he discovers an unconscious figure that looks similar to Sonic. Unbeknownst to Ray, he reawakens Shadow the Hedgehog. Without any recollection of his past, Ray decides to drop him off at the peninsula but as they approach, Shadow spots Eggman and orders Ray to chase him down. While it may just be intuition, Shadow feels the need to reclaim a sense of vengeance and recover his memories."
           screenshot={screenshot5}
-        />
+        >
+          Without hesitation Sonic and friends travel to the Chiral Peninsula. As Ray drops them off one by one, he discovers an unconscious figure that looks similar to Sonic. Unbeknownst to Ray, he reawakens <TextCharDecor char='shadow'>Shadow the Hedgehog</TextCharDecor>. Without any recollection of his past, Ray decides to drop him off at the peninsula but as they approach, Shadow spots Eggman and orders Ray to chase him down. While it may just be intuition, Shadow feels the need to reclaim a sense of vengeance and recover his memories.
+        </ScreenshotWithText>
       </div>
 
       {/* Rocky section vertical parallax */}
