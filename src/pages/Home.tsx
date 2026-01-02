@@ -7,8 +7,7 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { useEffect, type ReactNode } from 'react';
 
 import sonicMegamixLogo from "../assets/logo.png"
-import monitorLeft from "../assets/monitorLeft.png"
-import monitorRight from "../assets/monitorRight.png"
+import monitor from "../assets/monitor.png"
 import staticTV from "../assets/static.gif"
 import screenshot1 from "../assets/screenshot_1.jpg"
 import screenshot2 from "../assets/screenshot_2.jpg"
@@ -88,7 +87,7 @@ const ScreenshotWithText = (
                           hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
                           transition-all duration-300 hover:cursor-pointer
                           scale-100 hover:scale-105" >
-          <img className="min-w-23" src={monitorLeft} />
+          <img className="min-w-25 scale-x-[-1]" src={monitor} />
           <div className='relative min-w-0 border-[#272a32] border-10'>
             <img
               src={screenshot} 
@@ -97,7 +96,7 @@ const ScreenshotWithText = (
               src={staticTV} 
             />
           </div>
-          <img className="min-w-23" src={monitorRight} />
+          <img className="min-w-25" src={monitor} />
         </div>
       </div>
     </PageColumn>
