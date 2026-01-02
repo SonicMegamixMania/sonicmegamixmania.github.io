@@ -7,6 +7,9 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { useEffect, type ReactNode } from 'react';
 
 import sonicMegamixLogo from "../assets/logo.png"
+import monitorLeft from "../assets/monitorLeft.png"
+import monitorRight from "../assets/monitorRight.png"
+import staticTV from "../assets/static.gif"
 import screenshot1 from "../assets/screenshot_1.jpg"
 import screenshot2 from "../assets/screenshot_2.jpg"
 import screenshot3 from "../assets/screenshot_3.jpg"
@@ -72,21 +75,30 @@ const ScreenshotWithText = (
     {capitalizedFirstPhrase="", text="", screenshot, firstColumn=false, children}: ScreenshotWithTextProps) => {
   return (
     <PageColumn firstColumn={firstColumn}>
-      <div className="mr-auto ml-auto pl-5 w-full max-w-[875px]">
+      <div className="mr-auto ml-auto pl-5 pr-20 w-full max-w-[875px]">
           <p className="text-justify">
             <span className="uppercase text-4xl">{capitalizedFirstPhrase}</span>{text}
             {children}
           </p>
       </div>
  
-      <div className="w-full" data-aos="fade-up">
-        <img className="w-full pl-20
-                        transition-all duration-300 hover:cursor-pointer  
+      <div className='w-full' data-aos="fade-up">
+        <div className="flex items-center
                         drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
-                        hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
-                        scale-100 hover:scale-105"
-          src={screenshot} 
-        />
+                          hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
+                          transition-all duration-300 hover:cursor-pointer
+                          scale-100 hover:scale-105" >
+          <img className="min-w-23" src={monitorLeft} />
+          <div className='relative min-w-0 border-[#272a32] border-10'>
+            <img
+              src={screenshot} 
+            />
+            <img className="absolute inset-0 h-full w-full opacity-15"
+              src={staticTV} 
+            />
+          </div>
+          <img className="min-w-23" src={monitorRight} />
+        </div>
       </div>
     </PageColumn>
   )
