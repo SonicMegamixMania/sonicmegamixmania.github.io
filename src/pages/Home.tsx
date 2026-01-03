@@ -13,6 +13,11 @@ import screenshot1 from "../assets/screenshot_1.jpg"
 import screenshot2 from "../assets/screenshot_2.jpg"
 import screenshot3 from "../assets/screenshot_3.jpg"
 import screenshot5 from "../assets/screenshot_5.jpg"
+import sonic from "../assets/sonic.png"
+import knuckles from "../assets/knuckles.png"
+import tails from "../assets/tails.png"
+import shadow from "../assets/shadow.png"
+import mighty from "../assets/mighty.png"
 
 const ScrollingBar = () => {
   return (
@@ -55,7 +60,8 @@ const PageColumn = ({ children, firstColumn=false }: PageColumnProps) => {
   return (
     <>
       {firstColumn && <div className="pt-30"/>}
-      <div className="relative flex flex-row items-center z-50 pl-10 pr-10 pt-30 m-auto max-w-[1750px]">
+      <div className="relative flex flex-row items-stretch justify-center
+                      z-50 pl-10 pr-10 pt-30 m-auto max-w-[1750px]">
         { children }
       </div>
     </>
@@ -84,9 +90,9 @@ const ScreenshotWithText = (
       <div className='w-full' data-aos="fade-up">
         <div className="flex items-center
                         drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
-                          hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
-                          transition-all duration-300 hover:cursor-pointer
-                          scale-100 hover:scale-105" >
+                        hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
+                        transition-all duration-300 hover:cursor-pointer
+                        scale-100 hover:scale-105" >
           <img className="min-w-25 scale-x-[-1]" src={monitor} />
           <div className='relative min-w-0 border-[#272a32] border-10'>
             <img
@@ -115,6 +121,9 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
     case "sonic":
       classText = "text-[#0000cc] [-webkit-text-stroke:1.5px_#f8a838]"
       break;
+    case "knuckles":
+      classText = "text-[#ea193b] [-webkit-text-stroke:1.5px_#00ab4f]"
+      break;
     case "eggman":
       classText = "text-[#b01010] [-webkit-text-stroke:1.5px_#FFFFFF]"
       break;
@@ -137,6 +146,35 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
     <span className={`text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
       {children}
     </span>
+  )
+}
+
+interface CharShowcaseProps {
+  charImg?: string,
+  charNameDecor?: string,
+  charName?: string,
+  text?: string
+  children?: ReactNode
+}
+
+const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="", children}: CharShowcaseProps) => {
+  return (
+    <div className='w-full max-w-[536px] min-h-[800px] flex-1  mr-5 '
+          data-aos="zoom-in"
+      >
+      <div className="h-full p-5 bg-[#7ebf9d] border-[#d50015] text-black
+                    border-8 drop-shadow-[0px_0px_20px_rgba(0,0,0,1)]
+                    transition-all duration-300 scale-100 2xl:hover:scale-103">
+        <img className='m-auto h-[400px] object-cover' src={charImg} />
+        <TextCharDecor char={charNameDecor}>
+          <p className='text-5xl 2xl:text-7xl text-center'>{charName}</p>
+        </TextCharDecor>
+        <p className='mt-5 text-lg 2xl:text-2xl text-justify'>
+          {text}
+          {children}
+        </p>
+      </div>
+    </div>
   )
 }
 
@@ -209,7 +247,7 @@ const Home = () => {
         <ScreenshotWithText 
           screenshot={screenshot3} 
         >
-          With this information in hand, <TextCharDecor char='mighty'>Mighty the Armadillo</TextCharDecor> calls upon his good friend <TextCharDecor char='ray'>Ray the Flying Squirrel</TextCharDecor> to warn Sonic the Hedgehog and Knuckles the Echidna about their lead on Eggman. In this rare time of freedom, the flickies are able to repay their debt to Sonic after the events on Flicky Island. They prevent Eggman from using the Chaos rings, breaking them down into a plethora of blue, red, and yellow rings scattered throughout dimensions.
+          With this information in hand, <TextCharDecor char='mighty'>Mighty the Armadillo</TextCharDecor> calls upon his good friend <TextCharDecor char='ray'>Ray the Flying Squirrel</TextCharDecor> to warn Sonic the Hedgehog and <TextCharDecor char='knuckles'>Knuckles the Echidna</TextCharDecor> about their lead on Eggman. In this rare time of freedom, the flickies are able to repay their debt to Sonic after the events on Flicky Island. They prevent Eggman from using the Chaos rings, breaking them down into a plethora of blue, red, and yellow rings scattered throughout dimensions.
         </ScreenshotWithText>
         <ScreenshotWithText 
           screenshot={screenshot5}
@@ -230,8 +268,48 @@ const Home = () => {
       </div>
 
       {/* Rocky info parallax */}
-      <div className="relative  h-screen bg-[#2b60c9]">
+      <div className="relative min-h-screen pb-30 bg-[#2b60c9]">
         <div className="absolute inset-0 bg-[url(/BG_8.png)] bg-size-[1500px_auto] bg-repeat bg-top"/>
+
+        <PageColumn>
+          <CharShowcase 
+            charImg={sonic} 
+            charNameDecor='sonic' 
+            charName='Sonic'
+            text='Sonic is a blue hedgehog who lives on planet Earth. He is always running all over the world at supersonic speeds, hence his name. He is carefree and relaxed but will never tolerate injustice, doing anything he can to help those in need. He also has a quick wit, a short temper, and a fairly cocky 
+            attitude.'  
+          />
+
+          <CharShowcase 
+            charImg={tails} 
+            charNameDecor='ray' 
+            charName='Tails'
+            text="Miles, better known by his nickname ''Tails'', is Sonic's faithful sidekick. Despite being bullied for having two tails, he is able to use them to fly like a helicopter. Miles has a knack for machinery and has grown into a confident young fox thanks to Sonic!"  
+          />
+
+          <CharShowcase 
+            charImg={knuckles} 
+            charNameDecor='knuckles' 
+            charName='Knuckles'
+            text='Knuckles, named after his fists, is known for his red-hot temper. An inhabitant of Angel Island, and the last guardian of the Master Emerald. While he has shown much animosity to Sonic in the past, his encounters with Eggman and the Chaotix have caused him to become less gullible, establishing a true sense of who is friend and who is foe.'  
+          />
+        </PageColumn>
+
+        <PageColumn firstColumn={false}>
+          <CharShowcase 
+            charImg={mighty} 
+            charNameDecor='mighty' 
+            charName='Mighty'
+            text="Mighty is a red and black armadillo with a strong sense of justice. Despite being a vagabond, he has recently decided to assist Charmy, Vector, and Espio in forming the Chaotix detective agency for the time being. His thirst for adventure allows him to be in tune with the natural elements of Water, Fire, and Electricity. Thanks to his shell, Mighty is extremely durable, able to block any incoming projectiles. Just like his name implies, he's remarkably strong!"  
+          />
+
+          <CharShowcase 
+            charImg={shadow} 
+            charNameDecor='shadow' 
+            charName='Shadow'
+            text="Shadow is the ''ultimate life form'', created in an experiment by Professor Gerald Robotnik aboard the Space Colony ARK. His exact age isn't known, but he is assumed to be around 50 years old. Once hungry for revenge after the death of Maria, Gerald's granddaughter, he was able to remember his promise to her that he would protect humanity and put his life on the line to do so. Shadow was barely able to survive his fall into Earth’s atmosphere by preserving some energy through his secondary inhibitor ring. His memories would be lost however."
+          />
+        </PageColumn>
       </div>
 
       {/* Grey section parallax */}
