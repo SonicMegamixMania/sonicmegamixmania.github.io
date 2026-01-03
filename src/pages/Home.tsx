@@ -60,8 +60,8 @@ const PageColumn = ({ children, firstColumn=false }: PageColumnProps) => {
   return (
     <>
       {firstColumn && <div className="pt-30"/>}
-      <div className="relative flex flex-row items-stretch justify-center
-                      z-50 pl-10 pr-10 pt-30 m-auto max-w-[1750px]">
+      <div className="relative flex flex-col lg:flex-row items-stretch justify-center
+                      z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 m-auto max-w-[1750px]">
         { children }
       </div>
     </>
@@ -80,8 +80,8 @@ const ScreenshotWithText = (
     {capitalizedFirstPhrase="", text="", screenshot, firstColumn=false, children}: ScreenshotWithTextProps) => {
   return (
     <PageColumn firstColumn={firstColumn}>
-      <div className="mr-auto ml-auto pl-5 pr-20 w-full max-w-[875px]">
-          <p className="text-justify">
+      <div className="mr-auto ml-auto lg:pl-5 lg:pr-20 w-full max-w-[875px]">
+          <p className="text-center lg:text-justify">
             <span className="uppercase text-4xl">{capitalizedFirstPhrase}</span>{text}
             {children}
           </p>
@@ -93,8 +93,8 @@ const ScreenshotWithText = (
                         hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
                         transition-all duration-300 hover:cursor-pointer
                         scale-100 hover:scale-105" >
-          <img className="min-w-25 scale-x-[-1]" src={monitor} />
-          <div className='relative min-w-0 border-[#272a32] border-10'>
+          <img className="w-10 lg:min-w-25 scale-x-[-1]" src={monitor} />
+          <div className='relative mt-5 lg:mt-0 min-w-0 border-[#272a32] border-3 lg:border-10'>
             <img
               src={screenshot} 
             />
@@ -102,7 +102,7 @@ const ScreenshotWithText = (
               src={staticTV} 
             />
           </div>
-          <img className="min-w-25" src={monitor} />
+          <img className="w-10 lg:min-w-25" src={monitor} />
         </div>
       </div>
     </PageColumn>
@@ -143,7 +143,7 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       break;
   }
   return (
-    <span className={`text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
+    <span className={`mr-2 lg:mr-0 text-3xl lg:text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
       {children}
     </span>
   )
@@ -184,7 +184,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="m-auto text-white font-outfit text-2xl 2xl:text-3xl">
+    <div className="m-auto text-white font-outfit text-xl lg:text-2xl 2xl:text-3xl">
       <div className="relative w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
         {/* Hill and water backgrounds */}
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_1.png)] scrolling-background-1"/>
@@ -222,8 +222,8 @@ const Home = () => {
             />
           </div>
 
-          <div className="w-full pl-7">
-              <p className="text-justify">
+          <div className="w-full mt-10 lg:mt-0 lg:pl-7">
+              <p className="text-center lg:text-justify">
                 <span className="text-4xl uppercase">Sonic Megamix Mania</span> is a fan-made modification for Sonic Mania Plus that aims to carry the torch of the discontinued ROM hack known as “Sonic the Hedgehog Megamix”. Megamix Mode adapts concepts from the ROM hack combined with the team's own vision bringing a unique experience built upon the foundation of the original. Classic Mode is a faithful remake of the content from “V.4.0b” of the ROM hack that offers a familiar experience with a fresh coat of paint. Sonic Megamix Mania offers beginner friendly and challenging experiences for old and new fans alike.
                 <br/><br/>
                 We plan to offer future updates to the project so follow our socials and be sure to stay tuned!
