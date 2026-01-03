@@ -54,16 +54,23 @@ const ButtonGradient = ({ text }: ButtonProps) => {
 interface PageColumnProps {
   children: ReactNode,
   firstColumn?: boolean
+  reverse?: boolean
 }
 
-const PageColumn = ({ children, firstColumn=false }: PageColumnProps) => {
+const PageColumn = ({ children, firstColumn=false, reverse=false }: PageColumnProps) => {
   return (
     <>
-      {firstColumn && <div className="pt-30"/>}
-      <div className="relative flex flex-col lg:flex-row items-stretch justify-center
+      {firstColumn && <div className="lg:pt-30"/>}
+      
+      {reverse && <div className="relative flex flex-col lg:flex-row-reverse items-stretch justify-center
                       z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 m-auto max-w-[1750px]">
         { children }
-      </div>
+      </div>}
+
+      {!reverse && <div className="relative flex flex-col lg:flex-row items-stretch justify-center
+                      z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 m-auto max-w-[1750px]">
+        { children }
+      </div>}
     </>
   )
 }
@@ -73,20 +80,23 @@ interface ScreenshotWithTextProps {
   text?: string,
   screenshot: string,
   firstColumn?: boolean,
-  children?: ReactNode
+  children?: ReactNode,
+  reverse?: boolean
 }
 
 const ScreenshotWithText = ( 
-    {capitalizedFirstPhrase="", text="", screenshot, firstColumn=false, children}: ScreenshotWithTextProps) => {
+    {capitalizedFirstPhrase="", text="", screenshot, firstColumn=false, reverse=false, children}: ScreenshotWithTextProps) => {
   return (
-    <PageColumn firstColumn={firstColumn}>
-      <div className="mr-auto ml-auto lg:pl-5 lg:pr-20 w-full max-w-[875px]">
+    <PageColumn firstColumn={firstColumn} reverse={reverse}>
+      {/* Text */}
+      <div className="mr-auto ml-auto lg:pl-10 lg:pr-20 w-full max-w-[875px]">
           <p className="text-center lg:text-justify">
             <span className="uppercase text-4xl">{capitalizedFirstPhrase}</span>{text}
             {children}
           </p>
       </div>
- 
+
+      {/* Monitor with Screenshot */}
       <div className='w-full' data-aos="fade-up">
         <div className="flex items-center
                         drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
@@ -159,7 +169,7 @@ interface CharShowcaseProps {
 
 const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="", children}: CharShowcaseProps) => {
   return (
-    <div className='w-full max-w-[536px] min-h-[800px] flex-1  mr-5 '
+    <div className='w-full max-w-[536px] min-h-[800px] flex-1 mr-5 pt-10 lg:pt-0 '
           data-aos="zoom-in"
       >
       <div className="h-full p-5 bg-[#7ebf9d] border-[#d50015] text-black
@@ -313,9 +323,82 @@ const Home = () => {
       </div>
 
       {/* Grey section parallax */}
-      <div className="relative h-screen bg-[#484868]">
+      <div className="relative min-h-screen pb-30 bg-[#484868]">
         {/* Scrolling bar */}
         <ScrollingBar />
+
+        {/* Level Text with Screenshots Two Columns*/}
+        <ScreenshotWithText
+          firstColumn={true}
+          reverse={true}
+          screenshot={screenshot1}
+        >
+          <TextCharDecor char="sonic">
+            <span className='lg:text-6xl'>Sunny Shores</span>
+          </TextCharDecor>
+          <br/>
+          Welcome to Sunny Shores! The ideal vacation spot with warm sand, cool surf, and hot sun. Unfortunately there’s no time to waste! Dash through the soft sand and lush grass to make your way towards Eggman. Hurry before it’s too late!
+        </ScreenshotWithText>
+
+        <ScreenshotWithText
+          firstColumn={true}
+          reverse={true}
+          screenshot={screenshot1}
+        >
+          <TextCharDecor char="sonic">
+            <span className='lg:text-6xl'>Dark Fortress</span>
+          </TextCharDecor>
+          <br/>
+          A tranquil, mysterious, yet dangerous castle lost in time. Legend has it that an ancient race once occupied these mountains until one day they all vanished. They held the secrets behind the rings and held vast knowledge of their power. Watch out though, plenty of traps remain guarding the fortress.
+        </ScreenshotWithText>
+
+        <ScreenshotWithText
+          firstColumn={true}
+          reverse={true}
+          screenshot={screenshot1}
+        >
+          <TextCharDecor char="sonic">
+            <span className='lg:text-6xl'>City Outskirts</span>
+          </TextCharDecor>
+          <br/>
+          Welcome to Luminous city! In this bustling city you’ll find many food and balloon vendors that you can make use of on your trip downtown. If I were you I’d be careful though, it seems Eggman is plotting something nefarious in this part of town. 
+        </ScreenshotWithText>
+
+        <ScreenshotWithText
+          firstColumn={true}
+          reverse={true}
+          screenshot={screenshot1}
+        >
+          <TextCharDecor char="sonic">
+            <span className='lg:text-6xl'>Misty Maze</span>
+          </TextCharDecor>
+          <br/>
+          Misty Maze, a bay containing an abandoned city flooded long ago. Now it is being converted into an Oil Rig for Eggman to make use of. Yuck! Make your way out of here before Eggman completes his plans, that is if you can even find a way out. 
+        </ScreenshotWithText>
+
+        <ScreenshotWithText
+          firstColumn={true}
+          reverse={true}
+          screenshot={screenshot1}
+        >
+          <TextCharDecor char="sonic">
+            <span className='lg:text-6xl'>Starry Night</span>
+          </TextCharDecor>
+          <br/>
+          The heart of Luminous city, this is where people like to spend most of their free time when they're not on the outskirts of the city. This week you can expect to see the starlight festival, a night of fun filled with flashing lights and fireworks! 
+        </ScreenshotWithText>
+
+        <ScreenshotWithText
+          firstColumn={true}
+          reverse={true}
+          screenshot={screenshot1}
+        >
+          <TextCharDecor char="sonic">
+            <span className='lg:text-6xl'>Metallic Base</span>
+          </TextCharDecor>
+          <br/>
+          In the middle of the city lies Eggman’s base of operation. Here Eggman tests his latest and greatest inventions and harnesses the chaotic energy from rings to power his newest badniks. Be careful though, it seems like Eggman is taking no risks and is on red alert. It wouldn’t be surprising if he decided to take some drastic measures to take care of you…
+        </ScreenshotWithText>
       </div>
     </div>
   )
