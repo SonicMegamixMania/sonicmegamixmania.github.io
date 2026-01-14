@@ -13,6 +13,12 @@ import screenshot1 from "../assets/screenshot_1.jpg"
 import screenshot2 from "../assets/screenshot_2.jpg"
 import screenshot3 from "../assets/screenshot_3.jpg"
 import screenshot5 from "../assets/screenshot_5.jpg"
+import screenshotSSZ from "../assets/SSZ.png"
+import screenshotSNZ from "../assets/SNZ.png"
+import screenshotCOZ from "../assets/COZ.png"
+import screenshotDFZ from "../assets/DFZ.png"
+import screenshotMBZ from "../assets/MBZ.png"
+import screenshotMMZ from "../assets/MMZ.png"
 import sonic from "../assets/sonic.png"
 import knuckles from "../assets/knuckles.png"
 import tails from "../assets/tails.png"
@@ -331,7 +337,7 @@ const Home = () => {
         <ScreenshotWithText
           firstColumn={true}
           reverse={true}
-          screenshot={screenshot1}
+          screenshot={screenshotSSZ}
         >
           <TextCharDecor char="sonic">
             <span className='lg:text-6xl'>Sunny Shores</span>
@@ -343,7 +349,7 @@ const Home = () => {
         <ScreenshotWithText
           firstColumn={true}
           reverse={true}
-          screenshot={screenshot1}
+          screenshot={screenshotDFZ}
         >
           <TextCharDecor char="sonic">
             <span className='lg:text-6xl'>Dark Fortress</span>
@@ -355,19 +361,19 @@ const Home = () => {
         <ScreenshotWithText
           firstColumn={true}
           reverse={true}
-          screenshot={screenshot1}
+          screenshot={screenshotCOZ}
         >
           <TextCharDecor char="sonic">
             <span className='lg:text-6xl'>City Outskirts</span>
           </TextCharDecor>
           <br/>
-          Welcome to Luminous city! In this bustling city you’ll find many food and balloon vendors that you can make use of on your trip downtown. If I were you I’d be careful though, it seems Eggman is plotting something nefarious in this part of town. 
+          Just outside of Luminous city, you find yourself in its luminous suburbs! Barely populated, yet still bustling with constant fairs, attractions. Around every corner you’ll find many vendors, offering food, balloons, you name it! A highlight for the night life, however, if I were you, I’d be careful. It seems Eggman is plotting something nefarious in these areas. 
         </ScreenshotWithText>
 
         <ScreenshotWithText
           firstColumn={true}
           reverse={true}
-          screenshot={screenshot1}
+          screenshot={screenshotMMZ}
         >
           <TextCharDecor char="sonic">
             <span className='lg:text-6xl'>Misty Maze</span>
@@ -379,7 +385,7 @@ const Home = () => {
         <ScreenshotWithText
           firstColumn={true}
           reverse={true}
-          screenshot={screenshot1}
+          screenshot={screenshotSNZ}
         >
           <TextCharDecor char="sonic">
             <span className='lg:text-6xl'>Starry Night</span>
@@ -391,7 +397,7 @@ const Home = () => {
         <ScreenshotWithText
           firstColumn={true}
           reverse={true}
-          screenshot={screenshot1}
+          screenshot={screenshotMBZ}
         >
           <TextCharDecor char="sonic">
             <span className='lg:text-6xl'>Metallic Base</span>
