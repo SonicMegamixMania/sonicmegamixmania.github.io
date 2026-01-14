@@ -24,6 +24,7 @@ import knuckles from "../assets/knuckles.png"
 import tails from "../assets/tails.png"
 import shadow from "../assets/shadow.png"
 import mighty from "../assets/mighty.png"
+import Countdown from 'react-countdown';
 
 const ScrollingBar = () => {
   return (
@@ -35,10 +36,10 @@ const ScrollingBar = () => {
 }
 
 interface ButtonProps {
-  text: string;
+  children: ReactNode
 }
 
-const ButtonGradient = ({ text }: ButtonProps) => {
+const ButtonGradient = ({ children }: ButtonProps) => {
   return (
     <div className="group mt-auto mb-20 ml-auto mr-auto font-bbh
                     text-white text-shadow-[0_5px_0px_rgb(0_0_0/_0.55)]">
@@ -49,7 +50,7 @@ const ButtonGradient = ({ text }: ButtonProps) => {
           <div className="text-3xl 2xl:text-6xl p-5 uppercase
                           rounded-4xl group-hover:rounded-2xl transition-all duration-300 hover:cursor-pointer
                           bg-linear-to-t from-[#d0cfed] via-[#8388cc] to-[#203582]">
-            {text}
+            {children}
           </div>
         </div>
       </div>
@@ -173,6 +174,8 @@ interface CharShowcaseProps {
   children?: ReactNode
 }
 
+const TARGET_DATE = new Date(2026, 0, 23);
+
 const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="", children}: CharShowcaseProps) => {
   return (
     <div className='w-full max-w-[536px] min-h-[800px] flex-1 mr-5 pt-10 lg:pt-0 '
@@ -217,7 +220,7 @@ const Home = () => {
           />
 
           {/* Download button */}
-          <ButtonGradient text='Download'/>
+          <ButtonGradient children={<Countdown date={TARGET_DATE} />}/>
         </div>
       </div>
 
@@ -233,7 +236,7 @@ const Home = () => {
                           hover:drop-shadow-[-10px_10px_0px_rgba(1,1,1,1)]"
                           data-aos="fade-right">
             <LiteYouTubeEmbed
-              id="vY0y033-Gic"
+              id="HcVNTu3pcMk"
               title="Sonic Megamix Trailer"
             />
           </div>
