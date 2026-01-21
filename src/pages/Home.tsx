@@ -174,7 +174,7 @@ interface CharShowcaseProps {
   children?: ReactNode
 }
 
-const TARGET_DATE = new Date(2026, 0, 23);
+const TARGET_DATE = new Date(1770390000 * 1000);
 
 const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="", children}: CharShowcaseProps) => {
   return (
@@ -214,10 +214,12 @@ const Home = () => {
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_6.png)] scrolling-background-4"/>
         
         <div className="relative w-full h-full flex flex-col flex-wrap justify-center content-center items-start">
+          <div className="growhidden 3xl:block 3xl:grow"/>
           {/* Logo */}
           <img className="w-[550px] 2xl:w-[880px] animate__animated animate__fadeInDown" 
             src={sonicMegamixLogo} 
           />
+          <div className="hidden 3xl:block 3xl:grow"/>
 
           {/* Download button */}
           <ButtonGradient children={<Countdown date={TARGET_DATE} />}/>
@@ -276,7 +278,7 @@ const Home = () => {
       </div>
 
       {/* Rocky section vertical parallax */}
-      <div className="relative  h-screen bg-[#2b60c9]">
+      <div className="relative min-h-screen bg-[#2b60c9]">
         <Parallax speed={-10} className="absolute inset-0">
           <div className="backgroundLayer repeatBGLayer bg-[url(/BG_7.png)] -translate-y-[-50px]"/>
         </Parallax>
@@ -310,7 +312,7 @@ const Home = () => {
             charImg={knuckles} 
             charNameDecor='knuckles' 
             charName='Knuckles'
-            text='Knuckles, named after his fists, is known for his red-hot temper. An inhabitant of Angel Island, and the last guardian of the Master Emerald. While he has shown much animosity to Sonic in the past, his encounters with Eggman and the Chaotix have caused him to become less gullible, establishing a true sense of who is friend and who is foe.'  
+            text='Knuckles - named after his fists - is known for his red-hot temper, is an inhabitant of Angel Island, and is the last guardian of the Master Emerald. While he has shown much animosity to Sonic in the past, his encounters with Eggman and the Chaotix have caused him to become less gullible, establishing a true sense of who is friend and who is foe.'
           />
         </PageColumn>
 
@@ -332,7 +334,7 @@ const Home = () => {
       </div>
 
       {/* Grey section parallax */}
-      <div className="relative min-h-screen pb-30 bg-[#484868]">
+      <div className="relative min-h-screen pb-60 bg-[#484868]">
         {/* Scrolling bar */}
         <ScrollingBar />
 
@@ -408,6 +410,93 @@ const Home = () => {
           <br/>
           In the middle of the city lies Eggman’s base of operation. Here Eggman tests his latest and greatest inventions and harnesses the chaotic energy from rings to power his newest badniks. Be careful though, it seems like Eggman is taking no risks and is on red alert. It wouldn’t be surprising if he decided to take some drastic measures to take care of you…
         </ScreenshotWithText>
+      </div>
+
+      {/* Footer */}
+      <div className='bg-[#14142e] p-5'>
+        <div className='max-w-[1200px] text-center m-auto'>
+          <p>
+            Sonic Megamix Mania is a non-profit fan game. 
+            <br/><br/>
+            <span className='text-2xl'>
+            Sonic the Hedgehog is a registered trademark of SEGA Holdings Co., Ltd. This project is not affiliated with, endorsed by, or licensed by SEGA. All Sonic characters, assets, and related intellectual property belong to SEGA.
+            </span>
+            <br/><br/>
+            <span className='text-2xl'>Project Leads:</span>
+            <br/><br/>
+            <span className='text-xl'>
+              <ul className='flex justify-around'>
+                <li>
+                  <a className='underline' target="_blank" href='https://troopsushi.com'>
+                    Anthony Botsford A.K.A. “Troopsushi”
+                  </a>
+                  <ul className='text-[#949494]'>
+                    <li>Lead Artist</li>
+                    <li>Level Designer</li>
+                  </ul>
+                </li>
+                <li>
+                  <span className='underline'>
+                    Balibali
+                  </span>
+                  <ul className='text-[#949494]'>
+                    <li>Project Organizer</li>
+                    <li>Social Media Manager</li>
+                    <li>Lead Level Designer</li>
+                  </ul>
+                </li>
+                <li>
+                  <a className='underline' target="_blank" href='https://www.codenamegamma.com'>
+                    CodenameGamma
+                  </a>
+                  <ul className='text-[#949494]'>
+                    <li>Lead Programmer</li>
+                  </ul>
+                </li>
+                <li>
+                  <a className='underline' target="_blank" href='https://www.youtube.com/@plasticwizard9871'>
+                    Jake Clark A.K.A. “Plastic Wizard”
+                  </a>
+                  <ul className='text-[#949494]'>
+                    <li>Social Media Manager</li>
+                    <li>Lead Level Designer</li>
+                    <li>Lead Writer</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul className='mt-10 flex justify-around'>
+                <li>
+                  <span className='underline'>
+                    Joey A.K.A. “Mellonhi”
+                  </span>
+                  <ul className='text-[#949494]'>
+                    <li>Lead Level Designer</li>
+                  </ul>
+                </li>
+                <li>
+                  <span className='underline'>
+                    Orbyy
+                  </span>
+                  <ul className='text-[#949494]'>
+                    <li>Project Founder</li>
+                  </ul>
+                </li>
+                <li>
+                  <span className='underline'>
+                    Ruby
+                  </span>
+                  <ul className='text-[#949494]'>
+                    <li>Sound Manager</li>
+                    <li>Musician</li>
+                  </ul>
+                </li>
+              </ul>
+            </span>
+          </p>
+
+          <p className='mt-10 text-xl'>Website developed by <a className='underline' target="_blank" href='http://gabrielcasanova.com.br'>Gabriel Casanova</a>
+          </p>
+        </div>
       </div>
     </div>
   )

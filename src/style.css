@@ -8,6 +8,7 @@
   --font-bbh: "BBH Bartle", sans-serif; 
   --font-outfit: "Outfit", sans-serif;
   --font-bbh-heg: "BBH Hegarty", sans-serif;
+  --breakpoint-3xl: 140rem; /* 120rem = 1920px */
 }
 
 /* BACKGROUND LAYER CONFIGURATION */
