@@ -238,7 +238,7 @@ const Home = () => {
                           hover:drop-shadow-[-10px_10px_0px_rgba(1,1,1,1)]"
                           data-aos="fade-right">
             <LiteYouTubeEmbed
-              id="HcVNTu3pcMk"
+              id="2JuRgiXiKJA"
               title="Sonic Megamix Trailer"
             />
           </div>
