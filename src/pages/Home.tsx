@@ -97,8 +97,8 @@ const ScreenshotWithText = (
     <PageColumn firstColumn={firstColumn} reverse={reverse}>
       {/* Text */}
       <div className="mr-auto ml-auto lg:pl-10 lg:pr-20 w-full max-w-[875px]">
-          <p className="text-center lg:text-justify">
-            <span className="uppercase text-4xl">{capitalizedFirstPhrase}</span>{text}
+          <p className="text-justify">
+            <span className="uppercase text-2xl lg:text-4xl">{capitalizedFirstPhrase}</span>{text}
             {children}
           </p>
       </div>
@@ -160,7 +160,7 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       break;
   }
   return (
-    <span className={`mr-2 lg:mr-0 text-3xl lg:text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
+    <span className={`mr-2 lg:mr-0 text-2xl lg:text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
       {children}
     </span>
   )
@@ -184,7 +184,7 @@ const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="
       <div className="h-full p-5 bg-[#7ebf9d] border-[#d50015] text-black
                     border-8 drop-shadow-[0px_0px_20px_rgba(0,0,0,1)]
                     transition-all duration-300 scale-100 2xl:hover:scale-103">
-        <img className='m-auto h-[400px] object-cover' src={charImg} />
+        <img className='m-auto h-[400px] object-contain' src={charImg} />
         <TextCharDecor char={charNameDecor}>
           <p className='text-5xl 2xl:text-7xl text-center'>{charName}</p>
         </TextCharDecor>
@@ -213,7 +213,7 @@ const Home = () => {
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_5.png)] scrolling-background-3"/>
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_6.png)] scrolling-background-4"/>
         
-        <div className="relative w-full h-full flex flex-col flex-wrap justify-center content-center items-start">
+        <div className="relative w-full h-full text-center flex flex-col flex-wrap justify-center content-center items-start">
           <div className="growhidden 3xl:block 3xl:grow"/>
           {/* Logo */}
           <img className="w-[550px] 2xl:w-[880px] animate__animated animate__fadeInDown" 
@@ -244,8 +244,8 @@ const Home = () => {
           </div>
 
           <div className="w-full mt-10 lg:mt-0 lg:pl-7">
-              <p className="text-center lg:text-justify">
-                <span className="text-4xl uppercase">Sonic Megamix Mania</span> is a fan-made modification for Sonic Mania Plus that aims to carry the torch of the discontinued ROM hack known as “Sonic the Hedgehog Megamix”. Megamix Mode adapts concepts from the ROM hack combined with the team's own vision bringing a unique experience built upon the foundation of the original. Classic Mode is a faithful remake of the content from “V.4.0b” of the ROM hack that offers a familiar experience with a fresh coat of paint. Sonic Megamix Mania offers beginner friendly and challenging experiences for old and new fans alike.
+              <p className="text-justify">
+                <span className="text-2xl lg:text-4xl uppercase">Sonic Megamix Mania</span> is a fan-made modification for Sonic Mania Plus that aims to carry the torch of the discontinued ROM hack known as “Sonic the Hedgehog Megamix”. Megamix Mode adapts concepts from the ROM hack combined with the team's own vision bringing a unique experience built upon the foundation of the original. Classic Mode is a faithful remake of the content from “V.4.0b” of the ROM hack that offers a familiar experience with a fresh coat of paint. Sonic Megamix Mania offers beginner friendly and challenging experiences for old and new fans alike.
                 <br/><br/>
                 We plan to offer future updates to the project so follow our socials and be sure to stay tuned!
               </p>
@@ -258,7 +258,7 @@ const Home = () => {
           capitalizedFirstPhrase="5 months have passed " 
           screenshot={screenshot1}
         >
-          since <TextCharDecor char="sonic">Sonic the Hedgehog's</TextCharDecor> previous plight against the nefarious <TextCharDecor char="eggman">Dr. Eggman.</TextCharDecor> Ever since their first conflict the two sides have been battling constantly, with victory being just out of Eggman's grasp. However, after years of fighting Eggman had vanished after the incident on Space Colony Ark, leaving the world safely in Sonic’s hands - or so it was thought.
+          since <TextCharDecor char="sonic">Sonic the Hedgehog</TextCharDecor>'s previous plight against the nefarious <TextCharDecor char="eggman">Dr. Eggman</TextCharDecor>. Ever since their first conflict the two sides have been battling constantly, with victory being just out of Eggman's grasp. However, after years of fighting, Eggman had vanished after the incident on Space Colony ARK, leaving the world safely in Sonic’s hands - or so it was thought.
         </ScreenshotWithText>
         <ScreenshotWithText 
           screenshot={screenshot2} 
@@ -266,12 +266,14 @@ const Home = () => {
           During this time of peace, the <TextCharDecor char='chaotix'>Chaotix</TextCharDecor> discover a paper trail of blueprints to be built on an Island known as the Chiral Peninsula. These plans have Eggman’s name written all over them, requiring the power source of the Chaos Rings or Master Emerald. In his solidarity, Eggman was able to make a ton of breakthroughs using his research from Newtrogic Island. Now he is able to create robots that use positive ring energy as their power source, helping him stay under the radar of Sonic and G.U.N.
         </ScreenshotWithText>
         <ScreenshotWithText 
-          screenshot={screenshot3} 
+          screenshot={screenshot3}
+          reverse={true}
         >
           With this information in hand, <TextCharDecor char='mighty'>Mighty the Armadillo</TextCharDecor> calls upon his good friend <TextCharDecor char='ray'>Ray the Flying Squirrel</TextCharDecor> to warn Sonic the Hedgehog and <TextCharDecor char='knuckles'>Knuckles the Echidna</TextCharDecor> about their lead on Eggman. In this rare time of freedom, the flickies are able to repay their debt to Sonic after the events on Flicky Island. They prevent Eggman from using the Chaos rings, breaking them down into a plethora of blue, red, and yellow rings scattered throughout dimensions.
         </ScreenshotWithText>
         <ScreenshotWithText 
           screenshot={screenshot5}
+          reverse={true}
         >
           Without hesitation Sonic and friends travel to the Chiral Peninsula. As Ray drops them off one by one, he discovers an unconscious figure that looks similar to Sonic. Unbeknownst to Ray, he reawakens <TextCharDecor char='shadow'>Shadow the Hedgehog</TextCharDecor>. Without any recollection of his past, Ray decides to drop him off at the peninsula but as they approach, Shadow spots Eggman and orders Ray to chase him down. While it may just be intuition, Shadow feels the need to reclaim a sense of vengeance and recover his memories.
         </ScreenshotWithText>
@@ -312,7 +314,7 @@ const Home = () => {
             charImg={knuckles} 
             charNameDecor='knuckles' 
             charName='Knuckles'
-            text='Knuckles - named after his fists - is known for his red-hot temper, is an inhabitant of Angel Island, and is the last guardian of the Master Emerald. While he has shown much animosity to Sonic in the past, his encounters with Eggman and the Chaotix have caused him to become less gullible, establishing a true sense of who is friend and who is foe.'
+            text='Named after his fierce fists that define his fighting style, Knuckles the Echidna is a hot-tempered inhabitant of Angel Island, the last guardian of the Master Emerald. As the last of his race, he bears the weight of a duty that often keeps him isolated from the world below. While he once viewed Sonic with deep-seated animosity, his history of being deceived by Eggman, as well as his time leading the Chaotix, has tempered his legendary gullibility.'
           />
         </PageColumn>
 
@@ -341,7 +343,6 @@ const Home = () => {
         {/* Level Text with Screenshots Two Columns*/}
         <ScreenshotWithText
           firstColumn={true}
-          reverse={true}
           screenshot={screenshotSSZ}
         >
           <TextCharDecor char="sonic">
@@ -353,7 +354,6 @@ const Home = () => {
 
         <ScreenshotWithText
           firstColumn={true}
-          reverse={true}
           screenshot={screenshotDFZ}
         >
           <TextCharDecor char="sonic">
@@ -389,7 +389,6 @@ const Home = () => {
 
         <ScreenshotWithText
           firstColumn={true}
-          reverse={true}
           screenshot={screenshotSNZ}
         >
           <TextCharDecor char="sonic">
@@ -401,7 +400,6 @@ const Home = () => {
 
         <ScreenshotWithText
           firstColumn={true}
-          reverse={true}
           screenshot={screenshotMBZ}
         >
           <TextCharDecor char="sonic">
@@ -420,77 +418,6 @@ const Home = () => {
             <br/><br/>
             <span className='text-2xl'>
             Sonic the Hedgehog is a registered trademark of SEGA Holdings Co., Ltd. This project is not affiliated with, endorsed by, or licensed by SEGA. All Sonic characters, assets, and related intellectual property belong to SEGA.
-            </span>
-            <br/><br/>
-            <span className='text-2xl'>Project Leads:</span>
-            <br/><br/>
-            <span className='text-xl'>
-              <ul className='flex justify-around'>
-                <li>
-                  <a className='underline' target="_blank" href='https://troopsushi.com'>
-                    Anthony Botsford A.K.A. “Troopsushi”
-                  </a>
-                  <ul className='text-[#949494]'>
-                    <li>Lead Artist</li>
-                    <li>Level Designer</li>
-                  </ul>
-                </li>
-                <li>
-                  <span className='underline'>
-                    Balibali
-                  </span>
-                  <ul className='text-[#949494]'>
-                    <li>Project Organizer</li>
-                    <li>Social Media Manager</li>
-                    <li>Lead Level Designer</li>
-                  </ul>
-                </li>
-                <li>
-                  <a className='underline' target="_blank" href='https://www.codenamegamma.com'>
-                    CodenameGamma
-                  </a>
-                  <ul className='text-[#949494]'>
-                    <li>Lead Programmer</li>
-                  </ul>
-                </li>
-                <li>
-                  <a className='underline' target="_blank" href='https://www.youtube.com/@plasticwizard9871'>
-                    Jake Clark A.K.A. “Plastic Wizard”
-                  </a>
-                  <ul className='text-[#949494]'>
-                    <li>Social Media Manager</li>
-                    <li>Lead Level Designer</li>
-                    <li>Lead Writer</li>
-                  </ul>
-                </li>
-              </ul>
-              <ul className='mt-10 flex justify-around'>
-                <li>
-                  <span className='underline'>
-                    Joey A.K.A. “Mellonhi”
-                  </span>
-                  <ul className='text-[#949494]'>
-                    <li>Lead Level Designer</li>
-                  </ul>
-                </li>
-                <li>
-                  <span className='underline'>
-                    Orbyy
-                  </span>
-                  <ul className='text-[#949494]'>
-                    <li>Project Founder</li>
-                  </ul>
-                </li>
-                <li>
-                  <span className='underline'>
-                    Ruby
-                  </span>
-                  <ul className='text-[#949494]'>
-                    <li>Sound Manager</li>
-                    <li>Musician</li>
-                  </ul>
-                </li>
-              </ul>
             </span>
           </p>
 
