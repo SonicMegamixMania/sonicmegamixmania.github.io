@@ -25,15 +25,8 @@ import tails from "../assets/tails.png"
 import shadow from "../assets/shadow.png"
 import mighty from "../assets/mighty.png"
 import Countdown from 'react-countdown';
-
-const ScrollingBar = () => {
-  return (
-    <div className="backgroundLayer repeatBGLayer
-                    bg-[url(/BARS.png)] scrolling-background-2 
-                    h-12 -translate-y-[23px]"
-    />
-  )
-}
+import ScrollingBar from '../Components/ScrollingBar';
+import { Link } from 'react-router';
 
 interface ButtonProps {
   children: ReactNode
@@ -421,7 +414,7 @@ const Home = () => {
             </span>
           </p>
 
-          <p className='mt-10 text-xl'>Website developed by <a className='underline' target="_blank" href='http://gabrielcasanova.com.br'>Gabriel Casanova</a>
+          <p className='mt-10 text-4xl'><Link className='underline' to="/Credits">Full Credits</Link>
           </p>
         </div>
       </div>
