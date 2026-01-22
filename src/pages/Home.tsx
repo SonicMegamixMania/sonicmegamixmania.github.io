@@ -98,7 +98,7 @@ const ScreenshotWithText = (
       {/* Text */}
       <div className="mr-auto ml-auto lg:pl-10 lg:pr-20 w-full max-w-[875px]">
           <p className="text-justify">
-            <span className="uppercase text-2xl lg:text-4xl">{capitalizedFirstPhrase}</span>{text}
+            <span className="uppercase text-2xl lg:text-3xl 2xl:text-4xl">{capitalizedFirstPhrase}</span>{text}
             {children}
           </p>
       </div>
@@ -160,7 +160,7 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       break;
   }
   return (
-    <span className={`mr-2 lg:mr-0 text-2xl lg:text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
+    <span className={`mr-2 lg:mr-0 text-2xl lg:text-3xl 2xl:text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
       {children}
     </span>
   )
@@ -203,7 +203,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="m-auto text-white font-outfit text-xl lg:text-2xl 2xl:text-3xl">
+    <div className="m-auto text-white font-outfit text-xl lg:text-xl 2xl:text-3xl">
       <div className="relative w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
         {/* Hill and water backgrounds */}
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_1.png)] scrolling-background-1"/>
@@ -227,7 +227,7 @@ const Home = () => {
       </div>
 
       {/* Blue info section */}
-      <div className="relative min-h-screen h-full bg-[#2b60c9]">
+      <div className="relative min-h-screen h-full pb-10 bg-[#2b60c9]">
         <ScrollingBar />
         
         {/* YouTube Video and Text Two Columns*/}
@@ -416,7 +416,7 @@ const Home = () => {
           <p>
             Sonic Megamix Mania is a non-profit fan game. 
             <br/><br/>
-            <span className='text-2xl'>
+            <span className='text-xl'>
             Sonic the Hedgehog is a registered trademark of SEGA Holdings Co., Ltd. This project is not affiliated with, endorsed by, or licensed by SEGA. All Sonic characters, assets, and related intellectual property belong to SEGA.
             </span>
           </p>
