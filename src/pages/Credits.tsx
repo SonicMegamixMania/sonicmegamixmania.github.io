@@ -25,7 +25,7 @@ const Credits = () => {
 
                 <li>
                   <a href="https://linktr.ee/balibali418" className="text-3xl underline block mb-2">
-                    Bánhegyi Balázs A.K.A “Balibali”
+                    Bánhegyi Balázs A.K.A. “Balibali”
                   </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Project Organizer</li>
@@ -66,14 +66,18 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Joey A.K.A. “Alpher”</span>
+                  <a href="https://www.youtube.com/@FsAlpha24" className="text-3xl underline block mb-2">
+                    Joey A.K.A. “Alpher”
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Lead Level Designer</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Mr. Cyber</span>
+                  <a href="https://twitter.com/Cyber_1204" className="text-3xl underline block mb-2">
+                    Mr. Cyber
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Lead Artist</li>
                     <li>Level Designer</li>
@@ -81,7 +85,9 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">ruby</span>
+                  <a href="https://bsky.app/profile/phantomruby.bsky.social" className="text-3xl underline block mb-2">
+                    ruby
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Sound Manager</li>
                     <li>Musician</li>
@@ -108,14 +114,18 @@ const Credits = () => {
               <h2 className="text-xl font-bold uppercase tracking-widest mb-4 border-b pb-2">Project Members</h2>
               <ul className="space-y-8">
                 <li>
-                  <span className="text-3xl block mb-2">AChickMcNuggie</span>
+                  <a href="https://twitter.com/McNuggieee" className="text-3xl underline block mb-2">
+                    AChickMcNuggie
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Artist</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Benjistring</span>
+                  <a href="https://www.youtube.com/c/benjistring" className="text-3xl underline block mb-2">
+                    Benjistring
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                     <li>Level Designer</li>
@@ -123,21 +133,27 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">DaanDemmers</span>
+                  <a href="https://www.youtube.com/@DaanDemmers" className="text-3xl underline block mb-2">
+                    DaanDemmers
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Glace Sue</span>
+                  <a href="https://www.youtube.com/@glacesue" className="text-3xl underline block mb-2">
+                    Glace Sue
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Jacket</span>
+                  <a href="https://linktr.ee/jacket227" className="text-3xl underline block mb-2">
+                    Jacket
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Promotional Artist</li>
                   </ul>
@@ -151,14 +167,18 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Leilani Wilson</span>
+                  <a href="https://soundcloud.com/leilani-r-wilson" className="text-3xl underline block mb-2">
+                    Leilani Wilson
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Luan Maziero</span>
+                  <a href="https://www.youtube.com/channel/UCpVc7zvoCFsDO9N3qjkrZ6g" className="text-3xl underline block mb-2">
+                    Luan Maziero
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                     <li>Portuguese Translation</li>
@@ -166,7 +186,18 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">MnMi</span>
+                  <a href="https://linktr.ee/MiBOpux" className="text-3xl underline block mb-2">
+                    Mibo
+                  </a>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Musician</li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="https://twitter.com/MnMi_Dev" className="text-3xl underline block mb-2">
+                    MnMi
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Artist</li>
                     <li>German Translation</li>
@@ -174,14 +205,18 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Mr. LevRocks</span>
+                  <a href="https://twitter.com/MrLevRocks" className="text-3xl underline block mb-2">
+                    Mr. LevRocks
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Artist</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">ScrewStache</span>
+                  <a href="https://www.youtube.com/c/ScrewStache" className="text-3xl underline block mb-2">
+                    ScrewStache
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                   </ul>
@@ -195,37 +230,29 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Snowball The Puppy</span>
+                  <a href="https://www.youtube.com/@SnowballThePuppy" className="text-3xl underline block mb-2">
+                    Snowball The Puppy
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">SpeedVGM</span>
+                  <a href="https://speedvgm.carrd.co/" className="text-3xl underline block mb-2">
+                    SpeedVGM
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Musician</li>
                   </ul>
                 </li>
 
                 <li>
-                  <span className="text-3xl block mb-2">Tales</span>
+                  <a href="https://bsky.app/profile/tales499.bsky.social" className="text-3xl underline block mb-2">
+                    Tales449
+                  </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Promotional Artist</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <span className="text-3xl block mb-2">Mibo</span>
-                  <ul className="list-disc pl-6 space-y-1">
-                    <li>Musician</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <span className="text-3xl block mb-2">ZeekieJoe</span>
-                  <ul className="list-disc pl-6 space-y-1">
-                    <li>Artist</li>
                   </ul>
                 </li>
               </ul>
@@ -235,41 +262,43 @@ const Credits = () => {
             <section>
               <h2 className="text-xl font-bold uppercase tracking-widest mb-4 border-b pb-2">Additional Contributors</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Axanery - Quality Assurance</li>
+                <li><a href="https://youtube.com/c/axanery" className="underline">Axanery</a> - Quality Assurance</li>
                 <li>AxelFrog - Dutch Translation</li>
                 <li>Bagel - Quality Assurance</li>
-                <li>bit_uint32 - Spanish Translation, Quality Assurance</li>
-                <li>Braven - Quality Assurance</li>
+                <li><a href="https://uint32bit.github.io/" className="underline">bit_uint32</a> - Spanish Translation, Quality Assurance</li>
                 <li>Bob - Quality Assurance</li>
-                <li>Burrotis - Quality Assurance</li>
+                <li><a href="https://bsky.app/profile/beforethenight.bsky.social" className="underline">Braven</a> - Quality Assurance</li>
+                <li><a href="https://son1c2001.carrd.co/" className="underline">Burrotis</a> - Quality Assurance</li>
                 <li>ChaseCat - Initial Music work</li>
-                <li>Gambito - Japanese Translation, Quality Assurance</li>
-                <li>GHNeko - Quality Assurance</li>
+                <li><a href="https://twitter.com/Gambito32x" className="underline">Gambito</a> - Japanese Translation, Quality Assurance</li>
                 <li>Jon Koneko - Classic Mode Assistance</li>
-                <li>Kast - French Translation</li>
+                <li><a href="https://twitter.com/TheSoniKast" className="underline">Kast</a> - French Translation</li>
                 <li>KGL - Help with an Ending Visual</li>
-                <li>KiaraGale - Sonic Mania Addendum improvements ported over</li>
-                <li>LouPlayer - Minor Sprite Art Assistance</li>
+                <li><a href="https://twitter.com/KiaraGale8677" className="underline">KiaraGale</a> - Sonic Mania Addendum improvements ported</li>
+                <li><a href="https://twitter.com/louplayer54" className="underline">LouPlayer</a> - Minor Sprite Art Assistance</li>
                 <li>Mantis - Quality Assurance</li>
-                <li>MiaCDi - Quality Assurance</li>
-                <li>NMark - Spanish Translation</li>
+                <li><a href="https://twitter.com/fortnitegaybutt" className="underline">MiaCDi</a> - Quality Assurance</li>
+                <li><a href="https://twitter.com/Markk_lastname" className="underline">NMark</a> - Spanish Translation</li>
                 <li>Orbyy - Initial Project Founder</li>
-                <li>Seb Kaiba - Quality Assurance</li>
-                <li>SuperSonic16 - Sonic Mania Rich Presence Source Code</li>
-                <li>PVic - Portuguese Translation, Quality Assurance</li>
+                <li><a href="https://pedrovictorvg.notion.site/Pedro-Gon-alves-PVic-0336b91fd2b04903b2be65e8b339660f" className="underline">PVic</a> - Portuguese Translation, Quality Assurance</li>
                 <li>RetroForever - Minor Sprite Art Assistance</li>
+                <li>Seb Kaiba - Quality Assurance</li>
                 <li>Soli - Minor Sprite Art Assistance</li>
+                <li><a href="https://bsky.app/profile/ss16.moe" className="underline">SuperSonic16</a> - Sonic Mania Rich Presence Source Code</li>
                 <li>TheBlurCafe - Italian Translation</li>
                 <li>TheVagabond - 3D Shadow Model</li>
                 <li>Tokonemu - Quality Assurance</li>
                 <li>Xavier Kenzan - Quality Assurance</li>
+                <li>ZeekieJoe - Minor Sprite Art Assistance</li>
               </ul>
             </section>
-
+            
             <div className='text-center'>
               <Link className="text-4xl underline" to="/">R E T U R N</Link>
             </div>
           </div>
+
+          
         </div>
       </div>
     </div>
