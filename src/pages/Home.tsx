@@ -24,6 +24,7 @@ import knuckles from "../assets/knuckles.png"
 import tails from "../assets/tails.png"
 import shadow from "../assets/shadow.png"
 import mighty from "../assets/mighty.png"
+import amy from "../assets/amy.png"
 import Countdown from 'react-countdown';
 import ScrollingBar from '../Components/ScrollingBar';
 import { Link } from 'react-router';
@@ -148,6 +149,9 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       break;
     case "shadow":
       classText = "text-[#000000] [-webkit-text-stroke:1.5px_#ff1212]"
+      break;
+    case "amy":
+      classText = "text-[#ff4080] [-webkit-text-stroke:1.5px_#326f44]"
       break;
     default:
       break;
@@ -324,6 +328,13 @@ const Home = () => {
             charNameDecor='shadow' 
             charName='Shadow'
             text="Shadow is the ''ultimate life form'', created in an experiment by Professor Gerald Robotnik aboard the Space Colony ARK. His exact age isn't known, but he is assumed to be around 50 years old. Once hungry for revenge after the death of Maria, Gerald's granddaughter, he was able to remember his promise to her that he would protect humanity and put his life on the line to do so. Shadow was barely able to survive his fall into Earth’s atmosphere by preserving some energy through his secondary inhibitor ring. His memories would be lost however."
+          />
+
+          <CharShowcase 
+            charImg={amy} 
+            charNameDecor='amy' 
+            charName='Amy'
+            text="Amy Rose, formerly known as “Rosy the Rascal” is a pink hedgehog with a strong admiration for Sonic. Amy loves fashion, performing tarot card readings, and helping those in need. After being rescued by Sonic from Metal Sonic on Little Planet, she uses her Piko Piko Hammer to defend herself and assist her friends. Her compassion is what allowed Shadow to briefly set aside his quest for revenge and continues to inspire others across her adventures. Feeling nostalgic, she decided to wear an old favorite outfit of hers as she travels along with Sonic on his new adventure."
           />
         </PageColumn>
       </div>
