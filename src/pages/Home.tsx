@@ -194,8 +194,6 @@ interface CharShowcaseProps {
   children?: ReactNode
 }
 
-const TARGET_DATE = new Date(1770390000 * 1000);
-
 const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="", children}: CharShowcaseProps) => {
   return (
     <div className='w-full max-w-[536px] min-h-[800px] flex-1 mr-5 pt-10 lg:pt-0 '
@@ -216,6 +214,8 @@ const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="
     </div>
   )
 }
+
+const TARGET_DATE = new Date(1770390000 * 1000);
 
 const Home = () => {
   useEffect(() => {
