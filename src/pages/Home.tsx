@@ -1,3 +1,4 @@
+// Libraries
 import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -5,10 +6,16 @@ import { Parallax } from "react-scroll-parallax"
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { useEffect, type ReactNode } from 'react';
+import Countdown from 'react-countdown';
+import ScrollingBar from '../Components/ScrollingBar';
+import { Link } from 'react-router';
 
+// Misc
 import sonicMegamixLogo from "../assets/logo.png"
 import monitor from "../assets/monitor.png"
 import staticTV from "../assets/static.gif"
+
+// Screenshots
 import screenshot1 from "../assets/screenshot_1.jpg"
 import screenshot2 from "../assets/screenshot_2.jpg"
 import screenshot3 from "../assets/screenshot_3.jpg"
@@ -19,15 +26,22 @@ import screenshotCOZ from "../assets/COZ.png"
 import screenshotDFZ from "../assets/DFZ.png"
 import screenshotMBZ from "../assets/MBZ.png"
 import screenshotMMZ from "../assets/MMZ.png"
+import challenge1 from "../assets/challenge1.png"
+import challenge2 from "../assets/challenge2.png"
+import challenge3 from "../assets/challenge3.png"
+import challenge4 from "../assets/challenge4.png"
+import classic1 from "../assets/classic1.png"
+import classic2 from "../assets/classic2.png"
+import classic3 from "../assets/classic3.png"
+import classic4 from "../assets/classic4.png"
+
+// Characters
 import sonic from "../assets/sonic.png"
 import knuckles from "../assets/knuckles.png"
 import tails from "../assets/tails.png"
 import shadow from "../assets/shadow.png"
 import mighty from "../assets/mighty.png"
 import amy from "../assets/amy.png"
-import Countdown from 'react-countdown';
-import ScrollingBar from '../Components/ScrollingBar';
-import { Link } from 'react-router';
 
 interface ButtonProps {
   children: ReactNode
@@ -76,6 +90,33 @@ const PageColumn = ({ children, firstColumn=false, reverse=false }: PageColumnPr
   )
 }
 
+interface ScreenshotProps {
+  src: string,
+}
+
+const Screenshot = ({src} : ScreenshotProps) => {
+  return (
+    <div className='w-full' data-aos="fade-up">
+      <div className="flex items-center
+                      drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
+                      hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
+                      transition-all duration-300
+                      scale-100 hover:scale-105" >
+        <img className="w-10 lg:min-w-25 scale-x-[-1]" src={monitor} />
+        <div className='relative mt-5 lg:mt-0 min-w-0 border-[#272a32] border-3 lg:border-10'>
+          <img
+            src={src} 
+          />
+          <img className="absolute inset-0 h-full w-full opacity-15"
+            src={staticTV} 
+          />
+        </div>
+        <img className="w-10 lg:min-w-25" src={monitor} />
+      </div>
+    </div>
+  )
+}
+
 interface ScreenshotWithTextProps {
   capitalizedFirstPhrase?: string,
   text?: string,
@@ -97,25 +138,7 @@ const ScreenshotWithText = (
           </p>
       </div>
 
-      {/* Monitor with Screenshot */}
-      <div className='w-full' data-aos="fade-up">
-        <div className="flex items-center
-                        drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
-                        hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
-                        transition-all duration-300 hover:cursor-pointer
-                        scale-100 hover:scale-105" >
-          <img className="w-10 lg:min-w-25 scale-x-[-1]" src={monitor} />
-          <div className='relative mt-5 lg:mt-0 min-w-0 border-[#272a32] border-3 lg:border-10'>
-            <img
-              src={screenshot} 
-            />
-            <img className="absolute inset-0 h-full w-full opacity-15"
-              src={staticTV} 
-            />
-          </div>
-          <img className="w-10 lg:min-w-25" src={monitor} />
-        </div>
-      </div>
+      <Screenshot src={screenshot} />
     </PageColumn>
   )
 }
@@ -414,9 +437,73 @@ const Home = () => {
         </ScreenshotWithText>
       </div>
 
+      {/* Dark Brown section parallax */}
+      <div className="relative min-h-screen pb-60 bg-[#14030d]">
+        {/* Scrolling bar */}
+        <ScrollingBar />
+
+        {/* Classic mode */}
+        <PageColumn>
+          <div>
+            {/* Text */}
+            <div>
+              {/* Title */}
+              <div className='text-center mb-10'>
+                <TextCharDecor char="sonic">
+                  <span className='lg:text-7xl'>CLASSIC MODE</span>
+                </TextCharDecor>
+              </div>
+
+              {/* Text */}
+              <p className='text-justify max-w-[1200px] m-auto'>Re-Experience the ROM-Hack that started it all! In Classic Mode, you can play through faithful remakes of the Original ‘Sonic the Hedgehog Megamix’ Zones, complete with 3 Acts, each! Mashing up the best of what 4.0b & 5.0a had to offer, with the addition of revamped visuals & music, it’s sure to be a treat to newcomers and Megamix veterans alike!</p>
+            </div>
+
+            {/* Screenshots */}
+            <div className='flex flex-col lg:flex-row lg:gap-20 lg:mt-20'>
+              <div><Screenshot src={classic1}/></div>
+              <div><Screenshot src={classic2}/></div>
+            </div>
+            <div className='flex flex-col lg:flex-row lg:gap-20 lg:mt-20'>
+              <div><Screenshot src={classic3}/></div>
+              <div><Screenshot src={classic4}/></div>
+            </div>
+          </div>
+        </PageColumn>
+
+        {/* Challenge mode */}
+        <PageColumn>
+          <div>
+            {/* Text */}
+            <div>
+              {/* Title */}
+              <div className='text-center mb-10'>
+                <TextCharDecor char="sonic">
+                  <span className='lg:text-7xl'>CHALLENGE MODE</span>
+                </TextCharDecor>
+              </div>
+
+              {/* Text */}
+              <p className='text-justify max-w-[1200px] m-auto'>Have you already mastered Megamix Mode and still left wanting more? Look no further, Challenge Mode is here to offer you 13 Challenge Acts! Ranging from entirely new layouts/gimmicks, to fast paced gauntlets, and even some abstract obstacles, no two challenges are the same! Experience what each Megamix Mode acts feels like, when looking at them through a twisted mirror!</p>
+            </div>
+
+            {/* Screenshots */}
+            <div className='flex flex-col lg:flex-row lg:gap-20 lg:mt-20'>
+              <div><Screenshot src={challenge1}/></div>
+              <div><Screenshot src={challenge2}/></div>
+            </div>
+            <div className='flex flex-col lg:flex-row lg:gap-20 lg:mt-20'>
+              <div><Screenshot src={challenge3}/></div>
+              <div><Screenshot src={challenge4}/></div>
+            </div>
+          </div>
+        </PageColumn>
+        
+      </div>
+
       {/* Footer */}
-      <div className='bg-[#14142e] p-5'>
-        <div className='max-w-[1200px] text-center m-auto'>
+      <div className='relative bg-[#14142e] p-5'>
+        <ScrollingBar />
+        <div className='mt-10 max-w-[1200px] text-center m-auto'>
           <p>
             Sonic Megamix Mania is a non-profit fan game. 
             <br/><br/>
