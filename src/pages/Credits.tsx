@@ -292,6 +292,18 @@ const Credits = () => {
                 <li>ZeekieJoe - Minor Sprite Art Assistance</li>
               </ul>
             </section>
+
+            {/* OG team */}
+            <section>
+              <h2 className="text-xl font-bold uppercase tracking-widest mb-4 border-b pb-2">The Originators</h2>
+              <ul className="space-y-4">
+                <li>
+                  <a href="https://www.headcannon.com/TeamMegamix/index.php?p=team" className="text-3xl underline block mb-2">
+                    Original Megamix Team
+                  </a>
+                </li>
+              </ul>
+            </section>
             
             <div className='text-center'>
               <Link className="text-4xl underline" to="/">R E T U R N</Link>
