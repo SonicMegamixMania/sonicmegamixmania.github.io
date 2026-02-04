@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { HashRouter, Route, Routes } from 'react-router'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import ScrollToTop from './Components/ScrollToTop.tsx'
 import "./style.css"
@@ -12,7 +12,7 @@ import Download from './pages/Download.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ParallaxProvider>
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop>
           <Routes>
             <Route path='/'         element={<Home />} />
@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path='/credits'  element={<Credits />} />
           </Routes>
         </ScrollToTop>
-      </BrowserRouter>
+      </HashRouter>
     </ParallaxProvider>
   </StrictMode>,
 )
