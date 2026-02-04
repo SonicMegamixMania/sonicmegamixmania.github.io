@@ -37,7 +37,7 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       classText = "text-[#60CB29] [-webkit-text-stroke:1.5px_#E7D94D]"
       break;
     case "darkfort":
-      classText = "text-[#4A4C73] [-webkit-text-stroke:1.5px_#D2281C]"
+      classText = "text-[#2B3334] [-webkit-text-stroke:1.5px_#D2281C]"
       break;
     case "city":
       classText = "text-[#5B2315] [-webkit-text-stroke:1.5px_#200B6A]"
@@ -46,7 +46,7 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
       classText = "text-[#DB8B80] [-webkit-text-stroke:1.5px_#1E4AE3]"
       break;
     case "starryn":
-      classText = "text-[#73AFE4] [-webkit-text-stroke:1.5px_#950BC1]"
+      classText = "text-[#0A9464] [-webkit-text-stroke:1.5px_#950BC1]"
       break;
     case "metallicb":
       classText = "text-[#6BB3E4] [-webkit-text-stroke:1.5px_#EBF212]"
