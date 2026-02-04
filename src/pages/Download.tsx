@@ -11,7 +11,8 @@ import smm2020 from "../assets/SMM2020.png"
 import smm2023 from "../assets/SMM2023.png"
 
 // Characters
-import sonic from "../assets/sonic.png"
+import sonic from "../assets/sonic.png";
+import tails from "../assets/tails.png";
 import PageColumn from '../Components/PageColumn';
 import TextCharDecor from '../Components/TextCharDecor';
 
@@ -43,16 +44,18 @@ const Download = () => {
   return (
     <div className="m-auto text-white font-outfit text-xl lg:text-xl 2xl:text-3xl">
       {/* Hill and water backgrounds */}
-      <div className="relative w-full min-h-screen bg-fixed overflow-hidden bg-[#530e7a]">
-        <div className="backgroundLayerBig repeatBGLayer bg-[url(/BG_DW_1.png)]"/>
-        <div className="backgroundLayerBig bg-[url(/BG_DW_2.png)]"/>
+      <div className="relative w-full min-h-screen bg-fixed overflow-hidden">
+        <div className='backgroundLayerBig bg-[#530e7a] brightness-85'/>
+        <div className="backgroundLayerBig repeatBGLayer bg-[url(/BG_DW_1.png)] brightness-85"/>
+        <div className="backgroundLayerBig bg-[url(/BG_DW_2.png)] brightness-85"/>
         
         <div className='relative w-full min-h-screen flex gap-10 flex-col lg:flex-row justify-center align-middle items-center '>
           <div>
-            <img className='w-[500px] animate__animated animate__bounceInLeft' src={sonic} />
+            <img className='w-[500px] animate__animated animate__bounceInLeft' src={tails} />
           </div>
           
-          <div className="text-center flex flex-col justify-center items-center animate__animated animate__bounceInDown">
+          {/* Download links */}
+          <div className="text-center flex flex-col justify-center items-center animate__animated animate__bounceInDown ">
             <div className='w-fit'>
               <p className='mb-5 p-2 rounded-2xl border-5 font-bold bg-gray-200 text-black'>SONIC MEGAMIX MANIA v1.0</p>
               <ButtonGradient>
@@ -68,6 +71,10 @@ const Download = () => {
                 </span>
               </ButtonGradient>
             </div>
+          </div>
+
+          <div>
+            <img className='w-[500px] animate__animated animate__bounceInLeft' src={sonic} />
           </div>
         </div>
       </div>
