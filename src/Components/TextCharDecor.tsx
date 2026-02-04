@@ -33,6 +33,27 @@ const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
     case "amy":
       classText = "text-[#ff4080] [-webkit-text-stroke:1.5px_#326f44]"
       break;
+    case "sunnyshores":
+      classText = "text-[#60CB29] [-webkit-text-stroke:1.5px_#E7D94D]"
+      break;
+    case "darkfort":
+      classText = "text-[#4A4C73] [-webkit-text-stroke:1.5px_#D2281C]"
+      break;
+    case "city":
+      classText = "text-[#5B2315] [-webkit-text-stroke:1.5px_#200B6A]"
+      break;
+    case "mistym":
+      classText = "text-[#DB8B80] [-webkit-text-stroke:1.5px_#1E4AE3]"
+      break;
+    case "starryn":
+      classText = "text-[#73AFE4] [-webkit-text-stroke:1.5px_#950BC1]"
+      break;
+    case "metallicb":
+      classText = "text-[#6BB3E4] [-webkit-text-stroke:1.5px_#EBF212]"
+      break;
+    case "classicm":
+      classText = "text-[#484868] [-webkit-text-stroke:1.5px_#9F9FE6]"
+      break;
     default:
       break;
   }

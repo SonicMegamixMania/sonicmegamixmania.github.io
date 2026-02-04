@@ -234,7 +234,7 @@ const Home = () => {
           firstColumn={true}
           screenshot={screenshotSSZ}
         >
-          <TextCharDecor char="sonic">
+          <TextCharDecor char="sunnyshores">
             <span className='lg:text-6xl'>Sunny Shores</span>
           </TextCharDecor>
           <br/>
@@ -245,7 +245,7 @@ const Home = () => {
           firstColumn={true}
           screenshot={screenshotDFZ}
         >
-          <TextCharDecor char="sonic">
+          <TextCharDecor char="darkfort">
             <span className='lg:text-6xl'>Dark Fortress</span>
           </TextCharDecor>
           <br/>
@@ -257,7 +257,7 @@ const Home = () => {
           reverse={true}
           screenshot={screenshotCOZ}
         >
-          <TextCharDecor char="sonic">
+          <TextCharDecor char="city">
             <span className='lg:text-6xl'>City Outskirts</span>
           </TextCharDecor>
           <br/>
@@ -269,7 +269,7 @@ const Home = () => {
           reverse={true}
           screenshot={screenshotMMZ}
         >
-          <TextCharDecor char="sonic">
+          <TextCharDecor char="mistym">
             <span className='lg:text-6xl'>Misty Maze</span>
           </TextCharDecor>
           <br/>
@@ -280,7 +280,7 @@ const Home = () => {
           firstColumn={true}
           screenshot={screenshotSNZ}
         >
-          <TextCharDecor char="sonic">
+          <TextCharDecor char="starryn">
             <span className='lg:text-6xl'>Starry Night</span>
           </TextCharDecor>
           <br/>
@@ -291,7 +291,7 @@ const Home = () => {
           firstColumn={true}
           screenshot={screenshotMBZ}
         >
-          <TextCharDecor char="sonic">
+          <TextCharDecor char="metallicb">
             <span className='lg:text-6xl'>Metallic Base</span>
           </TextCharDecor>
           <br/>
@@ -311,7 +311,7 @@ const Home = () => {
             <div>
               {/* Title */}
               <div className='text-center mb-10'>
-                <TextCharDecor char="sonic">
+                <TextCharDecor char="classicm">
                   <span className='lg:text-7xl'>CLASSIC MODE</span>
                 </TextCharDecor>
               </div>
@@ -339,7 +339,7 @@ const Home = () => {
             <div>
               {/* Title */}
               <div className='text-center mb-10'>
-                <TextCharDecor char="sonic">
+                <TextCharDecor char="eggman">
                   <span className='lg:text-7xl'>CHALLENGE MODE</span>
                 </TextCharDecor>
               </div>
