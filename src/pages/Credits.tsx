@@ -67,7 +67,7 @@ const Credits = () => {
 
                 <li>
                   <a href="https://www.youtube.com/@FsAlpha24" className="text-3xl underline block mb-2">
-                    Joey A.K.A. “Alpher”
+                    Joey Jordan A.K.A. “Alpher”
                   </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Lead Level Designer</li>
