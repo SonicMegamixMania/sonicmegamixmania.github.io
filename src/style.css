@@ -16,6 +16,10 @@
   @apply absolute inset-0 bg-size-[1500px_auto] bg-bottom bg-no-repeat;
 }
 
+.backgroundLayerBig {
+  @apply absolute inset-0 bg-size-[2300px_auto] bg-bottom bg-no-repeat;
+}
+
 .repeatBGLayer {
   @apply bg-repeat-x;
 }

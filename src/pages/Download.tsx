@@ -44,8 +44,8 @@ const Download = () => {
     <div className="m-auto text-white font-outfit text-xl lg:text-xl 2xl:text-3xl">
       {/* Hill and water backgrounds */}
       <div className="relative w-full min-h-screen bg-fixed overflow-hidden bg-[#530e7a]">
-        <div className="backgroundLayer repeatBGLayer bg-[url(/BG_DW_1.png)]"/>
-        <div className="backgroundLayer bg-[url(/BG_DW_2.png)]"/>
+        <div className="backgroundLayerBig repeatBGLayer bg-[url(/BG_DW_1.png)]"/>
+        <div className="backgroundLayerBig bg-[url(/BG_DW_2.png)]"/>
         
         <div className='relative w-full min-h-screen flex gap-10 flex-col lg:flex-row justify-center align-middle items-center '>
           <div>
