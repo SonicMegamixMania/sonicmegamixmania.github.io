@@ -3,7 +3,7 @@ import ScrollingBar from './ScrollingBar'
 
 const Footer = () => {
   return (
-    <div className='relative bg-[#14142e] p-5'>
+    <footer className='relative bg-[#14142e] p-5'>
       <ScrollingBar />
       <div className='mt-10 max-w-[1200px] text-center m-auto'>
         <p>
@@ -18,14 +18,14 @@ const Footer = () => {
         <p className='m-5'>
           <a className='underline' target='_blank' href='https://twitter.com/MegamixMania'>Twitter</a>
           <span className='ml-2 mr-2'>&bull;</span>
-          <a className='underline' target='_blank' href='https://bsky.app/profile/megamixmania.bsky.social'>BlueSky</a>
+          <a className='underline' target='_blank' href='https://bsky.app/profile/megamixmania.bsky.social'>Bluesky</a>
           <span className='ml-2 mr-2'>&bull;</span>
           <a className='underline' target='_blank' href='https://www.youtube.com/@sonicmegamixmania'>YouTube</a>
           <span className='ml-2 mr-2'>&bull;</span>
           <a className='underline' target='_blank' href='https://discord.com/servers/sonic-megamix-mania-community-server-493217624763924481'>Discord</a>
         </p>
       </div>
-    </div>
+    </footer>
   )
 }
 
