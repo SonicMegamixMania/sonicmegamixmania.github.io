@@ -7,13 +7,17 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { useEffect, type ReactNode } from 'react';
 import Countdown from 'react-countdown';
+
+// Components
 import ScrollingBar from '../Components/ScrollingBar';
-import { Link } from 'react-router';
+import Footer from '../Components/Footer';
+import ButtonGradient from '../Components/ButtonGradient';
+import PageColumn from '../Components/PageColumn';
+import ScreenshotWithText from '../Components/ScreenshotWithText';
+import Screenshot from '../Components/Screenshot';
 
 // Misc
 import sonicMegamixLogo from "../assets/logo.png"
-import monitor from "../assets/monitor.png"
-import staticTV from "../assets/static.gif"
 
 // Screenshots
 import screenshot1 from "../assets/screenshot_1.jpg"
@@ -42,149 +46,7 @@ import tails from "../assets/tails.png"
 import shadow from "../assets/shadow.png"
 import mighty from "../assets/mighty.png"
 import amy from "../assets/amy.png"
-
-interface ButtonProps {
-  children: ReactNode
-}
-
-const ButtonGradient = ({ children }: ButtonProps) => {
-  return (
-    <div className="group mt-auto mb-20 ml-auto mr-auto font-bbh
-                    text-white text-shadow-[0_5px_0px_rgb(0_0_0/_0.55)]">
-      <div className="p-1.5 rounded-4xl group-hover:rounded-2xl transition-all duration-300
-                      bg-[#20327b] drop-shadow-[7px_7px_0px_rgba(1,1,1,1)]">
-        <div className="p-1.5 rounded-4xl group-hover:rounded-2xl transition-all duration-300
-                        bg-linear-to-t from-[#203582] via-[#8388cc] to-[#d0cfed]">
-          <div className="text-3xl 2xl:text-6xl p-5 uppercase
-                          rounded-4xl group-hover:rounded-2xl transition-all duration-300 hover:cursor-pointer
-                          bg-linear-to-t from-[#d0cfed] via-[#8388cc] to-[#203582]">
-            {children}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-interface PageColumnProps {
-  children: ReactNode,
-  firstColumn?: boolean
-  reverse?: boolean
-}
-
-const PageColumn = ({ children, firstColumn=false, reverse=false }: PageColumnProps) => {
-  return (
-    <>
-      {firstColumn && <div className="lg:pt-30"/>}
-      
-      {reverse && <div className="relative flex flex-col lg:flex-row-reverse items-stretch justify-center
-                      z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 m-auto max-w-[1750px]">
-        { children }
-      </div>}
-
-      {!reverse && <div className="relative flex flex-col lg:flex-row items-stretch justify-center
-                      z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 m-auto max-w-[1750px]">
-        { children }
-      </div>}
-    </>
-  )
-}
-
-interface ScreenshotProps {
-  src: string,
-}
-
-const Screenshot = ({src} : ScreenshotProps) => {
-  return (
-    <div className='w-full' data-aos="fade-up">
-      <div className="flex items-center
-                      drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
-                      hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
-                      transition-all duration-300
-                      scale-100 hover:scale-105" >
-        <img className="w-10 lg:min-w-25 scale-x-[-1]" src={monitor} />
-        <div className='relative mt-5 lg:mt-0 min-w-0 border-[#272a32] border-3 lg:border-10'>
-          <img
-            src={src} 
-          />
-          <img className="absolute inset-0 h-full w-full opacity-15"
-            src={staticTV} 
-          />
-        </div>
-        <img className="w-10 lg:min-w-25" src={monitor} />
-      </div>
-    </div>
-  )
-}
-
-interface ScreenshotWithTextProps {
-  capitalizedFirstPhrase?: string,
-  text?: string,
-  screenshot: string,
-  firstColumn?: boolean,
-  children?: ReactNode,
-  reverse?: boolean
-}
-
-const ScreenshotWithText = ( 
-    {capitalizedFirstPhrase="", text="", screenshot, firstColumn=false, reverse=false, children}: ScreenshotWithTextProps) => {
-  return (
-    <PageColumn firstColumn={firstColumn} reverse={reverse}>
-      {/* Text */}
-      <div className="mr-auto ml-auto lg:pl-10 lg:pr-20 w-full max-w-[875px]">
-          <p className="text-justify">
-            <span className="uppercase text-2xl lg:text-3xl 2xl:text-4xl">{capitalizedFirstPhrase}</span>{text}
-            {children}
-          </p>
-      </div>
-
-      <Screenshot src={screenshot} />
-    </PageColumn>
-  )
-}
-
-interface TextCharDecorProps {
-  char?: string,
-  children?: ReactNode
-}
-
-const TextCharDecor = ({char="sonic", children}:TextCharDecorProps) => {
-  let classText = ""
-
-  switch (char) {
-    case "sonic":
-      classText = "text-[#0000cc] [-webkit-text-stroke:1.5px_#f8a838]"
-      break;
-    case "knuckles":
-      classText = "text-[#ea193b] [-webkit-text-stroke:1.5px_#00ab4f]"
-      break;
-    case "eggman":
-      classText = "text-[#b01010] [-webkit-text-stroke:1.5px_#FFFFFF]"
-      break;
-    case "chaotix":
-      classText = "text-[#782ce6] [-webkit-text-stroke:1.5px_#54f978]"
-      break;
-    case "mighty":
-      classText = "text-[#b01010] [-webkit-text-stroke:1.5px_#200040]"
-      break;
-    case "ray":
-      classText = "text-[#f09000] [-webkit-text-stroke:1.5px_#b00000]"
-      break;
-    case "shadow":
-      classText = "text-[#000000] [-webkit-text-stroke:1.5px_#ff1212]"
-      break;
-    case "amy":
-      classText = "text-[#ff4080] [-webkit-text-stroke:1.5px_#326f44]"
-      break;
-    default:
-      break;
-  }
-  return (
-    <span className={`mr-2 lg:mr-0 text-2xl lg:text-3xl 2xl:text-4xl font-bbh-heg uppercase text-shadow-[5px_5px_0px_rgb(0_0_0)] ${classText}`}>
-      {children}
-    </span>
-  )
-}
+import TextCharDecor from '../Components/TextCharDecor';
 
 interface CharShowcaseProps {
   charImg?: string,
@@ -224,8 +86,8 @@ const Home = () => {
 
   return (
     <div className="m-auto text-white font-outfit text-xl lg:text-xl 2xl:text-3xl">
+      {/* Hill and water backgrounds */}
       <div className="relative w-full h-screen bg-fixed overflow-hidden bg-[#1938cf]">
-        {/* Hill and water backgrounds */}
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_1.png)] scrolling-background-1"/>
         <div className="backgroundLayer bg-[url(/BG_2.png)]"/>
         <div className="backgroundLayer repeatBGLayer bg-[url(/BG_3.png)]"/>
@@ -501,29 +363,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <div className='relative bg-[#14142e] p-5'>
-        <ScrollingBar />
-        <div className='mt-10 max-w-[1200px] text-center m-auto'>
-          <p>
-            Sonic Megamix Mania is a non-profit fan game. 
-            <br/><br/>
-            <span className='text-xl'>
-            Sonic the Hedgehog is a registered trademark of SEGA Holdings Co., Ltd. This project is not affiliated with, endorsed by, or licensed by SEGA. All Sonic characters, assets, and related intellectual property belong to SEGA.
-            </span>
-          </p>
-
-          <p className='mt-10 text-4xl'><Link className='underline' to="/Credits">Full Credits</Link></p>
-          <p className='m-5'>
-            <a className='underline' target='_blank' href='https://twitter.com/MegamixMania'>Twitter</a>
-            <span className='ml-2 mr-2'>&bull;</span>
-            <a className='underline' target='_blank' href='https://bsky.app/profile/megamixmania.bsky.social'>BlueSky</a>
-            <span className='ml-2 mr-2'>&bull;</span>
-            <a className='underline' target='_blank' href='https://www.youtube.com/@sonicmegamixmania'>YouTube</a>
-            <span className='ml-2 mr-2'>&bull;</span>
-            <a className='underline' target='_blank' href='https://discord.com/servers/sonic-megamix-mania-community-server-493217624763924481'>Discord</a>
-          </p>
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }

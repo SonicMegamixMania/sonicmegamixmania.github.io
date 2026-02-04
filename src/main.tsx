@@ -1,11 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Home from './pages/Home.tsx'
-import "./style.css"
 import { ParallaxProvider } from 'react-scroll-parallax'
-import Credits from './pages/Credits.tsx'
 import ScrollToTop from './Components/ScrollToTop.tsx'
+import "./style.css"
+
+import Home from './pages/Home.tsx'
+import Credits from './pages/Credits.tsx'
+import Download from './pages/Download.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,8 +15,9 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <ScrollToTop>
           <Routes>
-            <Route path='/'        element={<Home />} />
-            <Route path='/credits' element={<Credits />} />
+            <Route path='/'         element={<Home />} />
+            <Route path='/download' element={<Download />} />
+            <Route path='/credits'  element={<Credits />} />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>
