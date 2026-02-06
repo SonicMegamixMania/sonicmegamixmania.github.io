@@ -133,7 +133,7 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <a href="https://www.youtube.com/@DaanDemmers" className="text-3xl underline block mb-2">
+                  <a href="https://www.youtube.com/@DaanDemmers." className="text-3xl underline block mb-2">
                     DaanDemmers
                   </a>
                   <ul className="list-disc pl-6 space-y-1">
@@ -205,8 +205,8 @@ const Credits = () => {
                 </li>
 
                 <li>
-                  <a href="https://twitter.com/MrLevRocks" className="text-3xl underline block mb-2">
-                    Mr. LevRocks
+                  <a href="https://mrlevrocks.itch.io/" className="text-3xl underline block mb-2">
+                    MrLevRocks
                   </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Artist</li>

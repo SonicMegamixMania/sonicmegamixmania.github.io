@@ -24,7 +24,7 @@ interface PriorVersionProps {
 
 const PriorVersion = ({url, img, text} : PriorVersionProps) => {
   return (
-    <div className='w-fit'>
+    <div className='w-fit' data-aos="fade-up">
       <a href={url} target='_blank'>
         <img className='w-fit drop-shadow-[10px_10px_0px_rgba(1,1,1,0.7)]
           hover:drop-shadow-[10px_10px_0px_rgba(1,1,1,1)]
@@ -59,7 +59,10 @@ const Download = () => {
             <div className='w-fit'>
               <p className='mb-5 p-2 rounded-2xl border-5 font-bold bg-gray-200 text-black'>SONIC MEGAMIX MANIA v1.0</p>
               <ButtonGradient>
-                <a href="">Download</a>
+                <a href="https://mega.nz/file/KMcmlDJY#pksaqfkZe0cfVFhFdIFQyA74HzlAB348HxdJe16VckA"
+                   target='_blank'>
+                  Download
+                </a>
               </ButtonGradient>
             </div>
 
@@ -89,7 +92,8 @@ const Download = () => {
           <div className="growhidden 3xl:block 3xl:grow"/>
           <h2 className='uppercase text-6xl text-left'>Support the Original Rom Hack!</h2>
           <a className='underline' 
-            href="https://info.sonicretro.org/Sonic_the_Hedgehog_Megamix">
+            href="https://info.sonicretro.org/Sonic_the_Hedgehog_Megamix"
+            target='_blank'>
             Play the one that started it all...
           </a>
           <div className="growhidden 3xl:block 3xl:grow"/>
@@ -116,9 +120,91 @@ const Download = () => {
               </div>
             </div>
             </div>
-          </PageColumn>
+        </PageColumn>
       </div>
 
+      <div className="relative bg-[#484868]">
+        <ScrollingBar /> 
+        <div className="w-full mt-10 lg:mt-0 z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 pb-30 m-auto max-w-[900px]">
+          {/* Download */}
+          <div>
+            <div className='text-center mb-10'>
+              <TextCharDecor char="sonic">
+                <span className='lg:text-7xl'>OST Download</span>
+              </TextCharDecor>
+            </div>
+
+            <div className='text-center flex w-fit gap-5 m-auto'>
+              <ButtonGradient>
+                <span className='lg:text-3xl'>
+                  <a href="https://drive.google.com/file/d/14lIrfJg8UKQM3kXyGuK02ZCwgZv2w8Zg/view"
+                      target='_blank'>
+                    FLAC
+                  </a>
+                </span>
+              </ButtonGradient>
+
+              <ButtonGradient>
+                <span className='lg:text-3xl'>
+                  <a href="https://drive.google.com/file/d/1P3PnFqPDZGSo5wInsocgPapv8GEElDfL/view"
+                      target='_blank'>
+                    MP3
+                  </a>
+                </span>
+              </ButtonGradient>
+            </div>
+          </div>
+
+          {/* YouTube */}
+          <div className='mt-15'>
+            <div className='text-center mb-10'>
+              <TextCharDecor char="eggman">
+                <span className='lg:text-7xl'>YouTube</span>
+              </TextCharDecor>
+            </div>
+
+            <div className='text-center flex gap-5'>
+              <ButtonGradient>
+                <span className='lg:text-3xl'>
+                  <a href="https://www.youtube.com/playlist?list=PLQuRF-JiGI_DuyolBxErqj7zvxtn9pHwF"
+                    target='_blank'>
+                  PLAYLIST
+                  </a>
+                </span>
+              </ButtonGradient>
+
+              <ButtonGradient>
+                <span className='lg:text-3xl'>
+                  <a href="https://www.youtube.com/watch?v=PLczSH9Du7g"
+                      target='_blank'>
+                    FULL ALBUM
+                  </a>
+                </span>
+              </ButtonGradient>
+            </div>
+          </div>
+
+          {/* YouTube */}
+          <div className='mt-15'>
+            <div className='text-center mb-10'>
+              <TextCharDecor char="amy">
+                <span className='lg:text-7xl'>Other Platforms</span>
+              </TextCharDecor>
+            </div>
+
+            <div className='text-center flex flex-col'>
+              <ButtonGradient>
+                <span className='lg:text-3xl'>
+                  <a href="https://soundcloud.com/sonic-megamix-mania/sets/re-discovery"
+                      target='_blank'>
+                    SOUNDCLOUD
+                  </a>
+                </span>
+              </ButtonGradient>
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   )

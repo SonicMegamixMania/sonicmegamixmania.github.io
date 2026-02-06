@@ -6,7 +6,7 @@ import { Parallax } from "react-scroll-parallax"
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { useEffect, type ReactNode } from 'react';
-import Countdown from 'react-countdown';
+//import Countdown from 'react-countdown';
 
 // Components
 import ScrollingBar from '../Components/ScrollingBar';
@@ -47,6 +47,7 @@ import shadow from "../assets/shadow.png"
 import mighty from "../assets/mighty.png"
 import amy from "../assets/amy.png"
 import TextCharDecor from '../Components/TextCharDecor';
+import { Link } from 'react-router';
 
 interface CharShowcaseProps {
   charImg?: string,
@@ -77,7 +78,7 @@ const CharShowcase = ({charImg=sonic, charNameDecor="sonic", charName="", text="
   )
 }
 
-const TARGET_DATE = new Date(1770390000 * 1000);
+//const TARGET_DATE = new Date(1770390000 * 1000);
 
 const Home = () => {
   useEffect(() => {
@@ -104,7 +105,7 @@ const Home = () => {
           <div className="hidden 3xl:block 3xl:grow"/>
 
           {/* Download button */}
-          <ButtonGradient children={<Countdown date={TARGET_DATE} />}/>
+          <ButtonGradient><Link to="/download">DOWNLOAD</Link></ButtonGradient>
         </div>
       </div>
 
