@@ -1,2 +1,2 @@
 # Sonic Megamix Mania Website
-By [Gabriel Casanova](https://sonicmegamixmania.github.io/#/)
+By [Gabriel Casanova](https://gabrielcasanova.com.br/)
