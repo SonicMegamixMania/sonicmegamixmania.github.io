@@ -272,6 +272,7 @@ const Credits = () => {
                 <li>ChaseCat - Initial Music work</li>
                 <li><a href="https://twitter.com/Gambito32x" className="underline">Gambito</a> - Japanese Translation, Quality Assurance</li>
                 <li>Jon Koneko - Classic Mode Assistance</li>
+                <li>Jubbalub - Minor Sprite Art Assistance</li>
                 <li><a href="https://twitter.com/TheSoniKast" className="underline">Kast</a> - French Translation</li>
                 <li>KGL - Help with an Ending Visual</li>
                 <li><a href="https://twitter.com/KiaraGale8677" className="underline">KiaraGale</a> - Sonic Mania Addendum improvements ported</li>
@@ -283,7 +284,7 @@ const Credits = () => {
                 <li><a href="https://pedrovictorvg.notion.site/Pedro-Gon-alves-PVic-0336b91fd2b04903b2be65e8b339660f" className="underline">PVic</a> - Portuguese Translation, Quality Assurance</li>
                 <li>RetroForever - Minor Sprite Art Assistance</li>
                 <li>Seb Kaiba - Quality Assurance</li>
-                <li>Soli - Minor Sprite Art Assistance</li>
+                <li><a href="https://x.com/Sollicitium" className='underline'>Soli</a> - Minor Sprite Art Assistance</li>
                 <li><a href="https://bsky.app/profile/ss16.moe" className="underline">SuperSonic16</a> - Sonic Mania Rich Presence Source Code</li>
                 <li>TheBlurCafe - Italian Translation</li>
                 <li>TheVagabond - 3D Shadow Model</li>
