@@ -33,6 +33,7 @@ const Credits = () => {
                     <li>Lead Level Designer</li>
                     <li>Classic Mode & Challenge Mode Lead</li>
                     <li>Translation Lead</li>
+                    <li>Minor Sprite Assistance</li>
                   </ul>
                 </li>
 
@@ -273,19 +274,23 @@ const Credits = () => {
                 <li><a href="https://twitter.com/Gambito32x" className="underline">Gambito</a> - Japanese Translation, Quality Assurance</li>
                 <li>Jon Koneko - Classic Mode Assistance</li>
                 <li>Jubbalub - Minor Sprite Art Assistance</li>
+                <li>JunkeyBot - Minor Sprite Art Assistance</li>
                 <li><a href="https://twitter.com/TheSoniKast" className="underline">Kast</a> - French Translation</li>
                 <li>KGL - Help with an Ending Visual</li>
-                <li><a href="https://twitter.com/KiaraGale8677" className="underline">KiaraGale</a> - Sonic Mania Addendum improvements ported</li>
+                <li><a href="https://twitter.com/KiaraGale8677" className="underline">KiaraGale</a> - Sonic Mania Addendum improvements ported, Optimization Help</li>
                 <li><a href="https://twitter.com/louplayer54" className="underline">LouPlayer</a> - Minor Sprite Art Assistance</li>
                 <li>Mantis - Quality Assurance</li>
                 <li><a href="https://twitter.com/fortnitegaybutt" className="underline">MiaCDi</a> - Quality Assurance</li>
+                <li>miniluv73 - Minor Sprite Art Assistance</li>
                 <li><a href="https://twitter.com/Markk_lastname" className="underline">NMark</a> - Spanish Translation</li>
                 <li>Orbyy - Initial Project Founder</li>
                 <li><a href="https://pedrovictorvg.notion.site/Pedro-Gon-alves-PVic-0336b91fd2b04903b2be65e8b339660f" className="underline">PVic</a> - Portuguese Translation, Quality Assurance</li>
                 <li>RetroForever - Minor Sprite Art Assistance</li>
+                <li>S_A3 - Minor Sprite Art Assistance</li>
                 <li>Seb Kaiba - Quality Assurance</li>
                 <li><a href="https://x.com/Sollicitium" className='underline'>Soli</a> - Minor Sprite Art Assistance</li>
                 <li><a href="https://bsky.app/profile/ss16.moe" className="underline">SuperSonic16</a> - Sonic Mania Rich Presence Source Code</li>
+                <li>TacoBytes - Minor Sprite Art Assistance</li>
                 <li>TheBlurCafe - Italian Translation</li>
                 <li>TheVagabond - 3D Shadow Model</li>
                 <li>Tokonemu - Quality Assurance</li>
