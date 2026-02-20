@@ -116,7 +116,7 @@ const Download = () => {
             </div>
 
             <div className='w-fit'>
-              <p className='mb-3 text-2xl p-2 rounded-2xl border-5 bg-gray-200 text-black'>Assets</p>
+              <p className='mb-3 text-2xl p-2 rounded-2xl border-5 bg-gray-200 text-black'>Renders & Soundtrack</p>
               <ButtonGradient>
                 <span className='text-3xl'>
                   <Link to="/assets">Download</Link>
