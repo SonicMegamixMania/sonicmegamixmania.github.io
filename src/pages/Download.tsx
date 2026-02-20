@@ -47,7 +47,7 @@ const Download = () => {
   }, [])
 
   const options = [
-    { value: '1.1', label: 'v1.1', link:"https://www.mediafire.com/file/7u2biykr365tpog/Sonic_Megamix_Mania_v1.1.rar/file", mirror1:"https://mega.nz/file/qAtzGDTR#VzY0U1yyDV4Z5NcblBRC9sOaOVt-sSEOpaHb7T37LfQ", mirror2:"https://cdn.discordapp.com/attachments/588402603445190678/1474409366768849211/Sonic_Megamix_Mania_v1.1.rar?ex=6999be3a&is=69986cba&hm=6830374921eea07f79916a934c1ecf6ba9cbaf703d5b8043ef1a02d41438c6f2&" },
+    { value: '1.1', label: 'v1.1', link:"https://www.mediafire.com/file/7u2biykr365tpog/Sonic_Megamix_Mania_v1.1.rar/file", mirror1:"https://mega.nz/file/qAtzGDTR#VzY0U1yyDV4Z5NcblBRC9sOaOVt-sSEOpaHb7T37LfQ", mirror2:"http://codenamegamma.com/Sonic%20Megamix%20Mania%20v1.1.rar" },
     
     { value: '1.0', label: 'v1.0', link:"http://codenamegamma.com/SONIC%20MEGAMIX%20MANIA%20V1.0.zip", mirror1:"https://www.mediafire.com/file/m0v963dfvgjn98o/SONIC_MEGAMIX_MANIA_V1.0.zip/file", mirror2:"https://mega.nz/file/KMcmlDJY#pksaqfkZe0cfVFhFdIFQyA74HzlAB348HxdJe16VckA" },
   ];
