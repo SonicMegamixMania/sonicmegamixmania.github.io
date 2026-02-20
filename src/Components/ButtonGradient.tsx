@@ -6,7 +6,7 @@ interface ButtonProps {
 
 const ButtonGradient = ({ children }: ButtonProps) => {
   return (
-    <div className="group mt-auto mb-20 ml-auto mr-auto font-bbh
+    <div className="group mt-auto mb-10 ml-auto mr-auto font-bbh
                     text-white text-shadow-[0_5px_0px_rgb(0_0_0/_0.55)]">
       <div className="p-1.5 rounded-4xl group-hover:rounded-2xl transition-all duration-300
                       bg-[#20327b] drop-shadow-[7px_7px_0px_rgba(1,1,1,1)]">

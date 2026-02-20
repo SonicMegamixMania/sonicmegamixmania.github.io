@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Footer from '../Components/Footer';
 import ScrollingBar from '../Components/ScrollingBar';
 import ButtonGradient from '../Components/ButtonGradient';
@@ -11,10 +11,15 @@ import smm2020 from "../assets/SMM2020.png"
 import smm2023 from "../assets/SMM2023.png"
 
 // Characters
-import sonic from "../assets/sonic.png";
-import tails from "../assets/tails.png";
+import sonic from "../assets/sonic_cartoon.png";
+import tails from "../assets/tails_cartoon.png";
+import knuckles from "../assets/knuckles_cartoon.png";
+import mighty from "../assets/mighty_cartoon.png";
+import amy from "../assets/amy_cartoon.png";
+import shadow from "../assets/shadow_cartoon.png";
 import PageColumn from '../Components/PageColumn';
 import TextCharDecor from '../Components/TextCharDecor';
+import { Link } from 'react-router';
 
 interface PriorVersionProps {
   url: string,
@@ -41,6 +46,24 @@ const Download = () => {
     AOS.init();
   }, [])
 
+  const options = [
+    { value: '1.1', label: 'v1.1', link:"https://www.mediafire.com/file/7u2biykr365tpog/Sonic_Megamix_Mania_v1.1.rar/file", mirror1:"https://mega.nz/file/qAtzGDTR#VzY0U1yyDV4Z5NcblBRC9sOaOVt-sSEOpaHb7T37LfQ", mirror2:"https://www.mediafire.com/file/7u2biykr365tpog/Sonic_Megamix_Mania_v1.1.rar/file" },
+    
+    { value: '1.0', label: 'v1.0', link:"http://codenamegamma.com/SONIC%20MEGAMIX%20MANIA%20V1.0.zip", mirror1:"https://www.mediafire.com/file/m0v963dfvgjn98o/SONIC_MEGAMIX_MANIA_V1.0.zip/file", mirror2:"https://mega.nz/file/KMcmlDJY#pksaqfkZe0cfVFhFdIFQyA74HzlAB348HxdJe16VckA" },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    // 2. Find the full object that matches the selected value
+    const targetValue = event.target.value;
+    const foundOption = options.find(opt => opt.value === targetValue);
+    
+    if (foundOption) {
+      setSelectedOption(foundOption);
+    }
+  };
+
   return (
     <div className="m-auto text-white font-outfit text-xl lg:text-xl 2xl:text-3xl">
       {/* Hill and water backgrounds */}
@@ -50,34 +73,62 @@ const Download = () => {
         <div className="backgroundLayerBig bg-[url(/BG_DW_2.png)] brightness-85"/>
         
         <div className='relative w-full min-h-screen flex gap-10 flex-col lg:flex-row justify-center align-middle items-center '>
-          <div>
-            <img className='w-[500px] animate__animated animate__bounceInLeft' src={tails} />
+          <div className='w-[200px] xl:mr-30 animate__animated animate__bounceInLeft'>
+            <img  src={sonic} />
+            <img  src={mighty} />
+            <img  src={shadow} />
           </div>
           
           {/* Download links */}
           <div className="text-center flex flex-col justify-center items-center animate__animated animate__bounceInDown ">
             <div className='w-fit'>
-              <p className='mb-5 p-2 rounded-2xl border-5 font-bold bg-gray-200 text-black'>SONIC MEGAMIX MANIA v1.0</p>
+              <p className='mb-3 p-2 rounded-2xl border-5 font-bold bg-gray-200 text-black'>
+                SONIC MEGAMIX MANIA
+                <select className='bg-white rounded-2xl pl-2 ml-4 border-2'
+                        id="downloadLinks" value={selectedOption.value} onChange={handleChange}>
+                  {options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </p>
               <ButtonGradient>
-                <a href="https://mega.nz/file/KMcmlDJY#pksaqfkZe0cfVFhFdIFQyA74HzlAB348HxdJe16VckA"
+                <a href={selectedOption.link}
                    target='_blank'>
                   Download
                 </a>
               </ButtonGradient>
+              <p className='-mt-5 mb-10'>
+                <a className="pr-5 hover:underline" href={selectedOption.mirror1} target='_blank'>MIRROR 1</a>
+                
+                <a className="hover:underline" href={selectedOption.mirror2} target='_blank'>MIRROR 2</a>
+              </p>
             </div>
 
             <div className='w-fit'>
-              <p className='mb-5 text-2xl p-2 rounded-2xl border-5 bg-gray-200 text-black'>Sonic Mania Mod Loader</p>
+              <p className='mb-3 text-2xl p-2 rounded-2xl border-5 bg-gray-200 text-black'>Sonic Mania Mod Loader</p>
               <ButtonGradient>
                 <span className='text-3xl'>
                   <a href="https://gamebanana.com/tools/6273" target="_blank">Download</a>
                 </span>
               </ButtonGradient>
             </div>
+
+            <div className='w-fit'>
+              <p className='mb-3 text-2xl p-2 rounded-2xl border-5 bg-gray-200 text-black'>Assets</p>
+              <ButtonGradient>
+                <span className='text-3xl'>
+                  <Link to="/assets">Download</Link>
+                </span>
+              </ButtonGradient>
+            </div>
           </div>
 
-          <div>
-            <img className='w-[500px] animate__animated animate__bounceInLeft' src={sonic} />
+          <div className='w-[200px] xl:ml-30 animate__animated animate__bounceInLeft'>
+            <img  src={tails} />
+            <img  src={knuckles} />
+            <img  src={amy} />
           </div>
         </div>
       </div>
@@ -121,89 +172,6 @@ const Download = () => {
             </div>
             </div>
         </PageColumn>
-      </div>
-
-      <div className="relative bg-[#484868]">
-        <ScrollingBar /> 
-        <div className="w-full mt-10 lg:mt-0 z-50 pl-3 lg:pl-10 pr-3 lg:pr-10 pt-30 pb-30 m-auto max-w-[900px]">
-          {/* Download */}
-          <div>
-            <div className='text-center mb-10'>
-              <TextCharDecor char="sonic">
-                <span className='lg:text-7xl'>OST Download</span>
-              </TextCharDecor>
-            </div>
-
-            <div className='text-center flex w-fit gap-5 m-auto'>
-              <ButtonGradient>
-                <span className='lg:text-3xl'>
-                  <a href="https://drive.google.com/file/d/14lIrfJg8UKQM3kXyGuK02ZCwgZv2w8Zg/view"
-                      target='_blank'>
-                    FLAC
-                  </a>
-                </span>
-              </ButtonGradient>
-
-              <ButtonGradient>
-                <span className='lg:text-3xl'>
-                  <a href="https://drive.google.com/file/d/1P3PnFqPDZGSo5wInsocgPapv8GEElDfL/view"
-                      target='_blank'>
-                    MP3
-                  </a>
-                </span>
-              </ButtonGradient>
-            </div>
-          </div>
-
-          {/* YouTube */}
-          <div className='mt-15'>
-            <div className='text-center mb-10'>
-              <TextCharDecor char="eggman">
-                <span className='lg:text-7xl'>YouTube</span>
-              </TextCharDecor>
-            </div>
-
-            <div className='text-center flex gap-5'>
-              <ButtonGradient>
-                <span className='lg:text-3xl'>
-                  <a href="https://www.youtube.com/playlist?list=PLQuRF-JiGI_DuyolBxErqj7zvxtn9pHwF"
-                    target='_blank'>
-                  PLAYLIST
-                  </a>
-                </span>
-              </ButtonGradient>
-
-              <ButtonGradient>
-                <span className='lg:text-3xl'>
-                  <a href="https://www.youtube.com/watch?v=PLczSH9Du7g"
-                      target='_blank'>
-                    FULL ALBUM
-                  </a>
-                </span>
-              </ButtonGradient>
-            </div>
-          </div>
-
-          {/* YouTube */}
-          <div className='mt-15'>
-            <div className='text-center mb-10'>
-              <TextCharDecor char="amy">
-                <span className='lg:text-7xl'>Other Platforms</span>
-              </TextCharDecor>
-            </div>
-
-            <div className='text-center flex flex-col'>
-              <ButtonGradient>
-                <span className='lg:text-3xl'>
-                  <a href="https://soundcloud.com/sonic-megamix-mania/sets/re-discovery"
-                      target='_blank'>
-                    SOUNDCLOUD
-                  </a>
-                </span>
-              </ButtonGradient>
-            </div>
-          </div>
-        </div>
       </div>
       <Footer />
     </div>

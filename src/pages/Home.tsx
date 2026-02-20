@@ -106,6 +106,7 @@ const Home = () => {
 
           {/* Download button */}
           <ButtonGradient><Link to="/download">DOWNLOAD</Link></ButtonGradient>
+          <div className='mb-10'/>
         </div>
       </div>
 
