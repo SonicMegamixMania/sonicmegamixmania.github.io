@@ -250,7 +250,7 @@ const Credits = () => {
 
                 <li>
                   <a href="https://bsky.app/profile/tales499.bsky.social" className="text-3xl underline block mb-2">
-                    Tales449
+                    Tales499
                   </a>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Promotional Artist</li>
